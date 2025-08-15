@@ -1,7 +1,7 @@
 
 .sidebar-section {
     display: flex;
-    height: 100vh; 
+    height: 100%; 
     background-color: #10101A;
 }
 
@@ -10,11 +10,16 @@
     width: 80px;
     display: flex;
     flex-direction: column; 
-    height: 100%;
+    height: 100vh;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .sidebar-toggle {
     width: 260px;
+
 }
 
 .sidebar-toggle-icons {
@@ -26,6 +31,10 @@
 
 .sidebar-toggle-icons p svg {
     color: #fff;
+}
+
+.sidebar-toggle + .container {
+    margin-left: 260px; 
 }
 
 /* ==== MOBILE VIEW ========== */

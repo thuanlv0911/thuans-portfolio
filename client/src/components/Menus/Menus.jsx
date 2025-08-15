@@ -1,6 +1,6 @@
 import React from 'react';
 import './menus.css';
-import profilePic from '../../assets/images/taxuaco.jpg';
+import profilePic from '../../assets/images/mb.jpg';
 import { IoHomeOutline } from "react-icons/io5";
 import { GrContactInfo } from "react-icons/gr";
 import { FiPhoneCall } from "react-icons/fi";

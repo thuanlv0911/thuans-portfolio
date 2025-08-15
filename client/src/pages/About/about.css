@@ -1,0 +1,70 @@
+
+.about-img {
+  border-radius: 10px;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border: 4px solid #2196F3;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(33, 150, 243, 0.3);
+}
+
+.btn-about {
+  background-color: #2196F3 !important; 
+  color: white !important; 
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 1s;
+}
+
+.btn-about:hover {
+  background-color: #fff !important; 
+  color: #2196F3 !important; 
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(33, 150, 243, 0.4);
+}
+
+.education:hover .fpt-university {
+  color: #F28C38; 
+}
+
+.language:hover .language-vietnamese {
+  color: #FF0000; 
+}
+
+.language:hover .language-english,
+.language:hover .language-japanese {
+  color: #FFD700;
+}
+
+.about-title {
+  position: relative;
+  padding-left: 20px;
+}
+
+.about-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -10px; 
+  width: 12px;
+  height: 12px;
+  background-color: #2196F3;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(33, 150, 243, 0.5); 
+}
+
+.about-title::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 8px; 
+  width: 2px;
+  height: 100%; 
+  background-color: #2196F3;
+}
