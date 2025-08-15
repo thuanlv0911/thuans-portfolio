@@ -3,6 +3,7 @@ import { GoSidebarExpand, GoSidebarCollapse } from "react-icons/go";
 import "./layout.css";
 import { useState } from "react";
 import Menus from "../Menus/Menus";
+import About from "../../pages/About/About";
 
 export default function Layout() {
 
@@ -16,8 +17,7 @@ export default function Layout() {
         <>
             <div className="sidebar-section">
                 <div className={toggle ? "sidebar-toggle sidebar" : "sidebar"}>
-                    <div className="sidebar-toggle-icons ">
-
+                    <div className="sidebar-toggle-icons">
                         <p onClick={handleToggle} className="toggle-icon">
                             {toggle ? (<GoSidebarExpand className="hover:text-blue-500" size={30} />) :
                                 (<GoSidebarCollapse size={30} className="hover:text-blue-500" />)}
@@ -27,6 +27,7 @@ export default function Layout() {
                 </div>
                 <div className="container">
                     <Home />
+                    <About />
                 </div>
             </div >
 

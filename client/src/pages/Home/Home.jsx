@@ -7,10 +7,10 @@ import { Button } from 'react-bootstrap';
 
 const Home = () => {
     return (
-        <div className="flex items-center justify-center min-h-screen p-8">
+        <div className="flex items-center justify-center min-h-screen px-16">
             <div className="container flex flex-col md:flex-row items-center justify-between gap-8 px-4">
                 <div className="home-content flex-1 md:text-left">
-                    <h2 className="text-3xl">Hi, I'm</h2>
+                    <h2 className="text-3xl">👋Hi, I'm</h2>
                     <h1 className="text-5xl font-bold text-blue-500">Le Van Thuan</h1>
                     <h2 className="flex justify-center md:justify-start items-center gap-2 text-2xl">
                         I am a
