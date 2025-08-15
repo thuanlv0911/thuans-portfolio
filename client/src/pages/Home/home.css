@@ -1,0 +1,24 @@
+.home-content h2,
+.home-content p,
+.home-content .mxh-icons {
+    color: #fff;
+}
+
+.home-button .btn-about {
+    background-color: #2196F3;
+    color: white;
+    width: 120px;
+    transition: all 1s;
+}
+
+.home-button .btn-about:hover {
+    background-color: #ccc;
+    color: #2196F3;
+    width: 168px;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    object-fit: cover; 
+    border: 8px solid #2196F3; 
+}
