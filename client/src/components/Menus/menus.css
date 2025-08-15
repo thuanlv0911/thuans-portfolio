@@ -1,0 +1,73 @@
+.navbar-profile-pic img {
+    border-radius: 90px;
+    height: 140px;
+    width: 140px;
+    display: flex;
+    vertical-align: middle;
+    margin: 0 auto;
+    margin-top: 16px;
+    object-fit: cover; 
+    border: 4px solid whitesmoke; 
+}
+
+.navbar-items {
+    margin-top: 48px;
+}
+
+.navbar-item {
+    color: #fff;
+    font-size: 20px;
+    margin-top: 16px;
+}
+
+.navbar-link {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+    cursor: pointer;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-duration: 200ms;
+
+}
+
+.navbar-link svg {
+    margin-right: 16px;
+    margin-left: 44px;
+}
+
+
+.navbar-profile-pic-icons img {
+    border-radius: 90px;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    vertical-align: middle;
+    margin: 0 auto;
+    margin-top: 16px;
+}
+
+.navbar-items-icons {
+    margin-top: 36px;
+}
+
+.navbar-item-icons {
+    color: #fff;
+    font-size: 20px;
+    margin-top: 16px;
+}
+
+.navbar-link-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+    cursor: pointer;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-duration: 200ms;
+
+}
+
+.navbar-link:hover,
+.navbar-link-icons:hover {
+    color: #2196F3;
+}
