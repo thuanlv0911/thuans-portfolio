@@ -20,10 +20,6 @@ const About = () => {
                             src={profilePic}
                             alt="Profile-picture"
                             className="about-img mx-auto md:mx-0"
-                            onError={(e) => {
-                                e.target.src = "https://via.placeholder.com/300";
-                                console.error("Failed to load profile picture");
-                            }}
                         />
                     </div>
                     <div className="flex-1 text-white space-y-6">

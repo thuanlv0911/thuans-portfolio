@@ -15,7 +15,10 @@ const Menus = ({ toggle }) => {
             {toggle ? (
                 <>
                     <div className="navbar-profile-pic">
-                        <img src={profilePic} alt="Profile-picture" />
+                        <a href="#">
+                            <img src={profilePic} alt="Profile-picture" className="about-img mx-auto md:mx-0"
+                            />
+                        </a>
                     </div>
                     <h3 className="text-center text-white text-2xl fw-light">Le Van Thuan</h3>
                     <div className="navbar-items flex-1">
@@ -47,9 +50,15 @@ const Menus = ({ toggle }) => {
                     </div>
                     <div className="mt-auto flex flex-col items-center gap-4 text-white pb-4">
                         <div className="flex justify-center gap-6">
-                            <FaFacebookF className="cursor-pointer hover:text-blue-500 transition-colors duration-200" title="Facebook" />
-                            <FaInstagram className="cursor-pointer hover:text-pink-500 transition-colors duration-200" title="Instagram" />
-                            <FaGithub className="cursor-pointer hover:text-gray-500 transition-colors duration-200" title="GitHub" />
+                            <a href="https://www.facebook.com/thuanlv0911" target="_blank" rel="noopener noreferrer" className="social-icon">
+                                <FaFacebookF className="cursor-pointer hover:text-blue-500 transition-colors duration-200" title="Facebook" />
+                            </a>
+                            <a href="https://www.instagram.com/thuanlv0911" target="_blank" rel="noopener noreferrer" className="social-icon">
+                                <FaInstagram className="cursor-pointer hover:text-pink-500 transition-colors duration-200" title="Instagram" />
+                            </a>
+                            <a href="https://github.com/thuanlv0911" target="_blank" rel="noopener noreferrer" className="social-icon">
+                                <FaGithub className="cursor-pointer hover:text-gray-500 transition-colors duration-200" title="GitHub" />
+                            </a>
                         </div>
                         <div className="flex items-center gap-1 text-sm">
                             <FaRegCopyright /> thuanlv0911
@@ -90,9 +99,15 @@ const Menus = ({ toggle }) => {
                     </div>
                     <div className="mt-auto flex flex-col items-center gap-4 text-white pb-4">
                         <div className="flex flex-col items-center gap-4">
-                            <FaFacebookF className="cursor-pointer hover:text-blue-500 transition-colors duration-200" title="Facebook" />
-                            <FaInstagram className="cursor-pointer hover:text-pink-500 transition-colors duration-200" title="Instagram" />
-                            <FaGithub className="cursor-pointer hover:text-gray-300 transition-colors duration-200" title="GitHub" />
+                            <a href="https://www.facebook.com/thuanlv0911" target="_blank" rel="noopener noreferrer" className="social-icon">
+                                <FaFacebookF className="cursor-pointer hover:text-blue-500 transition-colors duration-200" title="Facebook" />
+                            </a>
+                            <a href="https://www.instagram.com/thuanlv0911" target="_blank" rel="noopener noreferrer" className="social-icon">
+                                <FaInstagram className="cursor-pointer hover:text-pink-500 transition-colors duration-200" title="Instagram" />
+                            </a>
+                            <a href="https://github.com/thuanlv0911" target="_blank" rel="noopener noreferrer" className="social-icon">
+                                <FaGithub className="cursor-pointer hover:text-gray-300 transition-colors duration-200" title="GitHub" />
+                            </a>
                         </div>
                         <FaRegCopyright className="text-sm" title="thuanlv0911" />
                     </div>
