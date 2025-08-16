@@ -60,7 +60,8 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="flex-1 flex justify-center">
-                    <img src={profilePic} alt="Profile-picture" className="profile-pic" />
+                    <img src={profilePic} alt="Profile-picture" className="profile-pic mx-auto md:mx-0"
+                    />
                 </div>
             </div>
         </div>

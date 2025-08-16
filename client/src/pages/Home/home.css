@@ -22,5 +22,13 @@
 .profile-pic {
     border-radius: 50%;
     object-fit: cover; 
-    border: 8px solid #2196F3; 
+    border: 8px solid #2196F3;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+ 
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(33, 150, 243, 0.3);
+  transition: all 0.5s;
 }

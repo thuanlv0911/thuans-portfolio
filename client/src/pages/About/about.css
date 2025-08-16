@@ -82,6 +82,10 @@
 .skill-mongodb svg { color: #47A248; }
 .skill-nodejs svg { color: #68A063; }
 
+.skill-item {
+  margin-left: 32px;
+}
+
 .skill-item:hover svg {
   transform: scale(1.2);
   transition: all 0.3s ease;
