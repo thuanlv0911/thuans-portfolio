@@ -1,4 +1,3 @@
-
 .about-img {
   border-radius: 10px;
   width: 100%;
@@ -14,27 +13,27 @@
 }
 
 .btn-about {
-  background-color: #2196F3 !important; 
-  color: white !important; 
+  background-color: #2196F3 !important;
+  color: white !important;
   border: none;
   padding: 10px 20px;
   border-radius: 8px;
-  transition: all 1s;
+  transition: all 0.3s ease;
 }
 
 .btn-about:hover {
-  background-color: #fff !important; 
-  color: #2196F3 !important; 
+  background-color: #fff !important;
+  color: #2196F3 !important;
   transform: scale(1.05);
   box-shadow: 0 4px 10px rgba(33, 150, 243, 0.4);
 }
 
 .education:hover .fpt-university {
-  color: #F28C38; 
+  color: #F28C38;
 }
 
 .language:hover .language-vietnamese {
-  color: #FF0000; 
+  color: #FF0000;
 }
 
 .language:hover .language-english,
@@ -51,20 +50,43 @@
   content: "";
   position: absolute;
   left: 0;
-  top: -10px; 
+  top: -10px;
   width: 12px;
   height: 12px;
   background-color: #2196F3;
   border-radius: 50%;
-  box-shadow: 0 0 8px rgba(33, 150, 243, 0.5); 
+  box-shadow: 0 0 8px rgba(33, 150, 243, 0.5);
 }
 
 .about-title::after {
   content: "";
   position: absolute;
   left: 5px;
-  top: 8px; 
+  top: 8px;
   width: 2px;
-  height: 100%; 
+  height: 100%;
   background-color: #2196F3;
+}
+
+.skill-cplusplus svg { color: #00599C; }
+.skill-java svg { color: #F89820; }
+.skill-javascript svg { color: #F7DF1E; }
+.skill-react svg { color: #61DAFB; }
+.skill-bootstrap svg { color: #7952B3; }
+.skill-tailwind svg { color: #38B2AC; }
+.skill-vscode svg { color: #007ACC; }
+.skill-intellij svg { color: #FE3157; }
+.skill-github svg { color: #F05032; }
+.skill-sqlserver svg { color: #CC2927; }
+.skill-mysql svg { color: #00758F; }
+.skill-mongodb svg { color: #47A248; }
+.skill-nodejs svg { color: #68A063; }
+
+.skill-item:hover svg {
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}
+
+.skill-item span:hover {
+    color: #2196F3;
 }

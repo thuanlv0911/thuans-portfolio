@@ -45,7 +45,6 @@ const Menus = ({ toggle }) => {
                             </div>
                         </div>
                     </div>
-                    {/* Footer */}
                     <div className="mt-auto flex flex-col items-center gap-4 text-white pb-4">
                         <div className="flex justify-center gap-6">
                             <FaFacebookF className="cursor-pointer hover:text-blue-500 transition-colors duration-200" title="Facebook" />
@@ -89,7 +88,6 @@ const Menus = ({ toggle }) => {
                             </div>
                         </div>
                     </div>
-                    {/* Footer */}
                     <div className="mt-auto flex flex-col items-center gap-4 text-white pb-4">
                         <div className="flex flex-col items-center gap-4">
                             <FaFacebookF className="cursor-pointer hover:text-blue-500 transition-colors duration-200" title="Facebook" />
