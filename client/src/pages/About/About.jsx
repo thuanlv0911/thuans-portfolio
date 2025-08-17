@@ -12,18 +12,18 @@ import { BsFiletypeSql } from "react-icons/bs";
 
 const About = () => {
     return (
-        <div className="min-h-screen bg-[#10101A] flex items-center justify-center px-4 sm:px-6 lg:px-16">
-            <div className="about max-w-5xl w-full py-8">
+        <div className="min-h-screen bg-[#10101A] flex items-center justify-center px-16">
+            <div className="about w-full py-8 px-4">
                 <div className="flex flex-col md:flex-row gap-8">
-                    <div className="flex-shrink-0 md:w-1/3">
+                    <div className="flex-shrink-0">
                         <img
                             src={profilePic}
                             alt="Profile-picture"
-                            className="about-img mx-auto md:mx-0"
+                            className="about-img mx-auto"
                         />
                     </div>
                     <div className="flex-1 text-white space-y-6">
-                        <h1 className="text-4xl font-bold about-title">About Me</h1>
+                        <h1 className="text-4xl font-mono about-title">About Me</h1>
                         <div className="education bg-[#0B0B13] p-6 rounded-lg shadow-lg">
                             <h3 className="text-3xl text-[#2196F3] font-semibold">Education</h3>
                             <p className="text-lg mt-2 fpt-university">FPT University - Hanoi</p>

@@ -4,6 +4,7 @@ import "./layout.css";
 import { useState } from "react";
 import Menus from "../Menus/Menus";
 import About from "../../pages/About/About";
+import Projects from "../../pages/Projects/Projects";
 
 export default function Layout() {
 
@@ -28,6 +29,7 @@ export default function Layout() {
                 <div className="container">
                     <Home />
                     <About />
+                    <Projects />
                 </div>
             </div >
 

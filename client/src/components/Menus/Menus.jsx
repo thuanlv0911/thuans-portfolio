@@ -3,7 +3,7 @@ import './menus.css';
 import profilePic from '../../assets/images/mb.jpg';
 import { IoHomeOutline } from "react-icons/io5";
 import { GrContactInfo } from "react-icons/gr";
-import { FiPhoneCall } from "react-icons/fi";
+import { HiOutlineMail } from "react-icons/hi";
 import { TbCertificate } from "react-icons/tb";
 import { BsDiagram3 } from "react-icons/bs";
 import { FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
@@ -44,7 +44,8 @@ const Menus = ({ toggle }) => {
                         </div>
                         <div className='navbar-item'>
                             <div className="navbar-link">
-                                <FiPhoneCall />Contact
+                                <HiOutlineMail />
+                                Contact
                             </div>
                         </div>
                     </div>
@@ -93,7 +94,7 @@ const Menus = ({ toggle }) => {
                         </div>
                         <div className='navbar-item-icons'>
                             <div className="navbar-link-icons">
-                                <FiPhoneCall title="Contact" />
+                                <HiOutlineMail title="Contact" />
                             </div>
                         </div>
                     </div>
