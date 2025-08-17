@@ -71,3 +71,21 @@
 .navbar-link-icons:hover {
     color: #2196F3;
 }
+
+
+.social-icon {
+  color: #fff;
+  transition: color 0.2s ease;
+}
+
+.social-icon:hover .facebook-icon {
+  color: #2196F3;
+}
+
+.social-icon:hover .instagram-icon {
+  color: #E1306C;
+}
+
+.social-icon:hover .github-icon {
+  color: #333;
+}
