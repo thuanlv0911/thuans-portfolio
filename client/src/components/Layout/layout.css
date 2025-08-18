@@ -34,10 +34,9 @@
 }
 
 .sidebar-toggle + .container {
-    margin-left: 18vw; 
+    margin-left: 19vw; 
 }
 
-/* ==== MOBILE VIEW ========== */
 @media (max-width: 600px) {
     .sidebar {
         display: none;
