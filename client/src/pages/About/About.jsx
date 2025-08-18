@@ -13,7 +13,7 @@ import { FiPhoneCall, FiDownload } from "react-icons/fi";
 
 const About = () => {
     return (
-        <div className="min-h-screen bg-[#10101A] flex items-center justify-center px-12">
+        <div className="min-h-screen bg-[#10101A] flex items-center justify-center">
             <div className="about w-full py-8 px-4">
                 <div className="flex flex-col md:flex-row gap-16">
                     <div className="flex-shrink-0">
