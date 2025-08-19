@@ -95,7 +95,7 @@
   background-color: #fff;
   color: #2196F3;
   border-radius: 9999px;
-  padding: 0.2rem 1rem;
+  padding: 0.1rem 1rem;
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
   transition: all 0.3s ease;
@@ -119,7 +119,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   transition: opacity 0.3s ease;
 }
 
