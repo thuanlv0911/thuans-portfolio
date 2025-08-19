@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-unused-vars
+import { motion, useScroll, useTransform } from "framer-motion";
 import Home from "../../pages/Home/Home";
 import { GoSidebarExpand, GoSidebarCollapse } from "react-icons/go";
 import "./layout.css";
@@ -9,12 +11,22 @@ import Certifications from "../../pages/Certifications/Certifications";
 import Contact from "../../pages/Contact/Contact";
 
 export default function Layout() {
-
     const [toggle, setToggle] = useState(true);
+    const { scrollYProgress } = useScroll();
+
+    const background = useTransform(
+        scrollYProgress,
+        [0, 0.5, 1],
+        [
+            "linear-gradient(to bottom, #3b82f6, #06b6d4)",
+            "linear-gradient(to bottom, #10b981, #059669)",
+            "linear-gradient(to bottom, #3b82f6, #06b6d4)"
+        ]
+    );
 
     const handleToggle = () => {
         setToggle(!toggle);
-    }
+    };
 
     return (
         <>
@@ -22,8 +34,11 @@ export default function Layout() {
                 <div className={toggle ? "sidebar-toggle sidebar" : "sidebar"}>
                     <div className="sidebar-toggle-icons">
                         <p onClick={handleToggle} className="toggle-icon">
-                            {toggle ? (<GoSidebarExpand className="hover:text-blue-500" size={30} />) :
-                                (<GoSidebarCollapse size={30} className="hover:text-blue-500" />)}
+                            {toggle ? (
+                                <GoSidebarExpand className="hover:text-blue-500" size={30} />
+                            ) : (
+                                <GoSidebarCollapse size={30} className="hover:text-blue-500" />
+                            )}
                         </p>
                     </div>
                     <Menus toggle={toggle} />
@@ -35,8 +50,11 @@ export default function Layout() {
                     <Certifications />
                     <Contact />
                 </div>
-            </div >
-
+            </div>
+            <motion.div
+                className="progress-bar"
+                style={{ scaleY: scrollYProgress, background }}
+            />
         </>
-    )
+    );
 }

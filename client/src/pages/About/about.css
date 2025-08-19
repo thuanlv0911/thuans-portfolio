@@ -49,7 +49,7 @@
 }
 
 .fpt-university {
-  margin-left: px;
+  margin-left: 0px;
 }
 
 .education:hover .fpt-university {
@@ -108,13 +108,10 @@
 
 .skill-item {
   margin-left: 32px;
+  transition: box-shadow 0.3s ease;
 }
 
-.skill-item:hover svg {
-  transform: scale(1.2);
-  transition: all 0.3s ease;
-}
 
 .skill-item span:hover {
-    color: #2196F3;
+  color: #2196F3;
 }
