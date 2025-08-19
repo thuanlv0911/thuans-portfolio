@@ -40,7 +40,7 @@
   height: auto;
   object-fit: cover;
   border-radius: 0.5rem;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .certification-content:hover .card-img {
@@ -60,7 +60,7 @@
   border-radius: 9999px;
   padding: 0.15rem 0.8rem;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .certification-content:hover .card-overlay {
@@ -69,6 +69,11 @@
 
 .certification-title {
   color: #2196F3 !important;
+  transition: all 0.3s ease;
+}
+
+.certification-content:hover .certification-title {
+  transform: translateY(-5px);
 }
 
 .certification-content {
@@ -89,7 +94,7 @@
 }
 
 .coursera-text {
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .coursera-logo {
@@ -98,7 +103,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .certification-content:hover .coursera-text {
@@ -113,5 +118,4 @@
   .vertical-timeline {
     width: 100%;
   }
-
 }
