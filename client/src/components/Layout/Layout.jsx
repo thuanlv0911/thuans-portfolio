@@ -6,6 +6,7 @@ import Menus from "../Menus/Menus";
 import About from "../../pages/About/About";
 import Projects from "../../pages/Projects/Projects";
 import Certifications from "../../pages/Certifications/Certifications";
+import Contact from "../../pages/Contact/Contact";
 
 export default function Layout() {
 
@@ -32,6 +33,7 @@ export default function Layout() {
                     <About />
                     <Projects />
                     <Certifications />
+                    <Contact />
                 </div>
             </div >
 
