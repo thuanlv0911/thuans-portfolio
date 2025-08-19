@@ -2,8 +2,10 @@ import React from 'react';
 import "./certification.css";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import { CgWebsite } from "react-icons/cg";
-import { SiCoursera } from "react-icons/si";
+import { SiCoursera, SiCodeigniter } from "react-icons/si";
+import { GrCycle } from "react-icons/gr";
+import { RiCodeSSlashFill } from "react-icons/ri";
+
 import UXDesign from "../../assets/images/uxdesign.jpg";
 import WebDesign from "../../assets/images/webdesign.jpg";
 import SDLC from "../../assets/images/SDLC.jpg";
@@ -20,10 +22,10 @@ const Certifications = () => {
                         contentArrowStyle={{ borderRight: '7px solid #0B0B13' }}
                         date="September 2024"
                         iconStyle={{ background: '#2196F3', color: '#fff' }}
-                        icon={<CgWebsite />}
+                        icon={<RiCodeSSlashFill />}
                     >
                         <div className="certification-content flex items-center">
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="card-img-link w-4/12">
+                            <a href="https://coursera.org/share/d23a4162bd21bc329106c2b3d13fb71f" target="_blank" rel="noopener noreferrer" className="card-img-link w-4/12">
                                 <div className="card-img-container relative">
                                     <img src={WebDesign} alt="Web Design" className="card-img rounded-lg" />
                                     <div className="card-overlay">Link</div>
@@ -44,10 +46,10 @@ const Certifications = () => {
                         contentArrowStyle={{ borderRight: '7px solid #0B0B13' }}
                         date="January 2025"
                         iconStyle={{ background: '#2196F3', color: '#fff' }}
-                        icon={<CgWebsite />}
+                        icon={<GrCycle />}
                     >
                         <div className="certification-content flex items-center">
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="card-img-link w-4/12">
+                            <a href="https://coursera.org/share/c658b57c47424083651ebe30dee6f001" target="_blank" rel="noopener noreferrer" className="card-img-link w-4/12">
                                 <div className="card-img-container relative">
                                     <img src={SDLC} alt="Software Development Lifecycle" className="card-img rounded-lg" />
                                     <div className="card-overlay">Link</div>
@@ -68,10 +70,10 @@ const Certifications = () => {
                         contentArrowStyle={{ borderRight: '7px solid #0B0B13' }}
                         date="May 2025"
                         iconStyle={{ background: '#2196F3', color: '#fff' }}
-                        icon={<CgWebsite />}
+                        icon={<SiCodeigniter />}
                     >
                         <div className="certification-content flex items-center">
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="card-img-link w-4/12">
+                            <a href="https://coursera.org/share/a7baf684a1d8d9e34543485b99a6ba4b" target="_blank" rel="noopener noreferrer" className="card-img-link w-4/12">
                                 <div className="card-img-container relative">
                                     <img src={UXDesign} alt="UX Design" className="card-img rounded-lg" />
                                     <div className="card-overlay">Link</div>
