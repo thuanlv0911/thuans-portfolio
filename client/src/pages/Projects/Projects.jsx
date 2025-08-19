@@ -2,7 +2,7 @@ import React from 'react';
 import "./project.css";
 import CMS from "../../assets/images/cms.png";
 import MyPortfolio from "../../assets/images/portfolio.png";
-import Shop1912Mobile from "../../assets/images/UniClub.png";
+import Shop1912Mobile from "../../assets/images/uniclub.png";
 import { FaJava } from "react-icons/fa6";
 import { SiJavascript, SiReact, SiBootstrap, SiTailwindcss, SiMysql, SiVite } from "react-icons/si";
 import { BsFiletypeSql } from "react-icons/bs";
