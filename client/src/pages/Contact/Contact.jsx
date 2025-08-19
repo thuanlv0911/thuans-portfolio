@@ -3,6 +3,7 @@ import "./contact.css";
 import { HiOutlineMail } from "react-icons/hi";
 import { FiPhone, FiMapPin } from "react-icons/fi";
 import { IoMailUnreadOutline } from "react-icons/io5";
+import { FaHandshake } from "react-icons/fa";
 import { Button } from "react-bootstrap";
 
 const Contact = () => {
@@ -11,27 +12,33 @@ const Contact = () => {
             <div className="contact w-full px-4 py-8 max-w-7xl mx-auto">
                 <h1 className="text-4xl font-mono contact-title">Contact</h1>
                 <div className="contact-container gap-6 mt-8 flex flex-col md:flex-row">
-                    <div className="contact-info flex flex-col align-items-center bg-[#0B0B13] p-6 rounded-lg shadow-lg md:w-1/3">
+                    <div className="contact-info bg-[#0B0B13] p-6 rounded-lg shadow-lg md:w-1/3">
                         <h2 className="text-3xl font-semibold text-[#2196F3] mb-4">Get in Touch</h2>
                         <div className="space-y-4">
                             <div className="flex items-center gap-3 contact-item">
-                                <HiOutlineMail className="text-2xl  transition-all duration-300" />
-                                <span className=" transition-all duration-300">thuanlv0911@gmail.com</span>
+                                <HiOutlineMail className="text-2xl transition-all duration-300" />
+                                <span className="transition-all duration-300">thuanlv0911@gmail.com</span>
                             </div>
                             <div className="flex items-center gap-3 contact-item">
-                                <FiPhone className="text-2xl  transition-all duration-300" />
-                                <span className=" transition-all duration-300">(+84) 964 405 117</span>
+                                <FiPhone className="text-2xl transition-all duration-300" />
+                                <span className="transition-all duration-300">(+84) 964 405 117</span>
                             </div>
                             <div className="flex items-center gap-3 contact-item">
                                 <FiMapPin className="text-2xl transition-all duration-300" />
-                                <span className=" transition-all duration-300">Hanoi, Vietnam</span>
+                                <span className="transition-all duration-300">Hanoi, Vietnam</span>
                             </div>
-                            <hr className='text-white' />
-
+                            <hr className="border-[#2196F3] my-4" />
+                            <div className="space-y-4">
+                                <h3 className="text-xl font-semibold text-[#2196F3]">Let’s Work Together</h3>
+                                <div className="flex items-center gap-3 contact-item">
+                                    <FaHandshake className="text-2xl transition-all duration-300" />
+                                    <span className="transition-all duration-300">.................................................................</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="contact-form bg-[#0B0B13] p-6 rounded-lg shadow-lg md:w-2/3">
-                        <h2 className="text-3xl font-semibold text-[#2196F3] mb-4">Send me a message</h2>
+                        <h2 className="text-3xl font-semibold text-[#2196F3] mb-4">Get in Contact</h2>
                         <form>
                             <div className="mb-4">
                                 <input
