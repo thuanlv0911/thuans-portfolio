@@ -92,7 +92,7 @@ const About = () => {
             x: 50,
             scale: 0.8,
             transition: {
-                duration: 0.3,
+                duration: 0.4,
                 ease: "easeIn"
             }
         }
@@ -102,7 +102,7 @@ const About = () => {
         rest: { scale: 1, y: 0 },
         hover: {
             scale: 1.1,
-            y: -5,
+            y: -10,
             transition: {
                 type: "spring",
                 stiffness: 300,
@@ -111,10 +111,48 @@ const About = () => {
         }
     };
 
+    const skillContainerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.3
+            }
+        },
+        exit: {
+            opacity: 0,
+            transition: {
+                staggerChildren: 0.15,
+                staggerDirection: -1
+            }
+        }
+    };
+
+    const skillGroupVariants = {
+        hidden: { opacity: 0, y: 30, scale: 0.8 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 12,
+                duration: 0.8
+            }
+        },
+        exit: {
+            opacity: 0,
+            y: -20,
+            scale: 0.9,
+            transition: { duration: 0.4, ease: "easeIn" }
+        }
+    };
+
     return (
-        <div className="min-h-screen bg-[#10101A] flex items-center justify-center">
-            <div className="about w-full py-8 px-4">
-                <div className="flex flex-col md:flex-row gap-16" id="about">
+        <div className="min-h-screen bg-[#10101A] flex items-center justify-center" >
+            <div className="about w-full py-8 px-4" id="about">
+                <div className="flex flex-col md:flex-row gap-16">
                     <motion.div
                         ref={profileRef}
                         variants={imageVariants}
@@ -215,8 +253,13 @@ const About = () => {
                     className="language mt-8 bg-[#0B0B13] p-6 rounded-lg shadow-lg text-white pl-16"
                 >
                     <h2 className="text-3xl font-semibold text-[#2196F3]">Skills</h2>
-                    <div className="mt-4 space-y-6">
-                        <div>
+                    <motion.div
+                        variants={skillContainerVariants}
+                        initial="hidden"
+                        animate={isSkillsInView ? "visible" : "exit"}
+                        className="mt-4 space-y-6"
+                    >
+                        <motion.div variants={skillGroupVariants}>
                             <h3 className="text-xl font-semibold">Programming Languages</h3>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
                                 {[
@@ -242,8 +285,8 @@ const About = () => {
                                     </motion.div>
                                 ))}
                             </div>
-                        </div>
-                        <div>
+                        </motion.div>
+                        <motion.div variants={skillGroupVariants}>
                             <h3 className="text-xl font-semibold">Frameworks & Libraries</h3>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
                                 {[
@@ -269,8 +312,8 @@ const About = () => {
                                     </motion.div>
                                 ))}
                             </div>
-                        </div>
-                        <div>
+                        </motion.div>
+                        <motion.div variants={skillGroupVariants}>
                             <h3 className="text-xl font-semibold">Tools</h3>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
                                 {[
@@ -299,8 +342,8 @@ const About = () => {
                                     </motion.div>
                                 ))}
                             </div>
-                        </div>
-                        <div>
+                        </motion.div>
+                        <motion.div variants={skillGroupVariants}>
                             <h3 className="text-xl font-semibold">Platform</h3>
                             <motion.div
                                 variants={itemVariants}
@@ -317,8 +360,8 @@ const About = () => {
                                     Node.js
                                 </motion.span>
                             </motion.div>
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
                 </motion.div>
             </div>
         </div>

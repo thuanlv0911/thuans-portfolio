@@ -10,8 +10,8 @@ import { FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
 
 const Contact = () => {
     return (
-        <div className="min-h-screen bg-[#10101A] flex items-center justify-center" >
-            <div className="contact w-full px-4 py-8 max-w-7xl mx-auto" id="contact">
+        <div className="min-h-screen bg-[#10101A] flex items-center justify-center" id="contact">
+            <div className="contact w-full px-4 py-8 max-w-7xl mx-auto">
                 <h1 className="text-4xl font-mono contact-title" >Contact</h1>
                 <div className="contact-container gap-6 mt-8 flex flex-col md:flex-row" >
                     <div className="contact-info bg-[#0B0B13] p-6 rounded-lg shadow-lg md:w-1/3">
