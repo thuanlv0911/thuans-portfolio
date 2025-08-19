@@ -67,9 +67,20 @@
 
 }
 
+.navbar-link,
+.navbar-link-icons {
+    text-decoration: none;
+    color: #fff;
+}
+
 .navbar-link:hover,
 .navbar-link-icons:hover {
     color: #2196F3;
+}
+
+.navbar-link.active,
+.navbar-link-icons.active {
+    color: #2196F3 !important;
 }
 
 

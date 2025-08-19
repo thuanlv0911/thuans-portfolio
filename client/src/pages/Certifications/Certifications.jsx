@@ -12,9 +12,9 @@ import SDLC from "../../assets/images/SDLC.jpg";
 
 const Certifications = () => {
     return (
-        <div className="min-h-screen bg-[#10101A] flex items-center justify-center">
+        <div className="min-h-screen bg-[#10101A] flex items-center justify-center" >
             <div className="certifications w-full px-4 py-8">
-                <h1 className="text-4xl font-mono certifications-title">Certifications</h1>
+                <h1 className="text-4xl font-mono certifications-title" id="certifications">Certifications</h1>
                 <VerticalTimeline>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"

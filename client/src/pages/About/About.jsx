@@ -13,7 +13,7 @@ import { FiPhoneCall, FiDownload } from "react-icons/fi";
 
 const About = () => {
     return (
-        <div className="min-h-screen bg-[#10101A] flex items-center justify-center">
+        <div className="min-h-screen bg-[#10101A] flex items-center justify-center" >
             <div className="about w-full py-8 px-4">
                 <div className="flex flex-col md:flex-row gap-16">
                     <div className="flex-shrink-0">
@@ -23,14 +23,14 @@ const About = () => {
                             className="about-img mx-auto"
                         />
                     </div>
-                    <div className="flex-1 text-white space-y-6">
+                    <div className="flex-1 text-white space-y-6" id="about">
                         <h1 className="text-4xl font-mono about-title">About Me</h1>
                         <div className="education bg-[#0B0B13] p-6 rounded-lg shadow-lg pl-16">
                             <h3 className="text-3xl text-[#2196F3] font-semibold">Education</h3>
                             <p className="text-lg mt-2 fpt-university">FPT University Hanoi</p>
                             <p className="text-lg fpt-university">Majoring in Software Engineering - GPA: 3.19/4</p>
                         </div>
-                        <div className="about-buttons flex gap-4">
+                        <div className="about-buttons flex gap-4 pl-16">
                             <Button className="btn-about btn-contact">
                                 <span className="btn-content">
                                     <FiPhoneCall className="btn-icon" />

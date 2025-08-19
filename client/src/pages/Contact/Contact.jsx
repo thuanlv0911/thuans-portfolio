@@ -8,10 +8,10 @@ import { Button } from "react-bootstrap";
 
 const Contact = () => {
     return (
-        <div className="min-h-screen bg-[#10101A] flex items-center justify-center">
-            <div className="contact w-full px-4 py-8 max-w-7xl mx-auto">
-                <h1 className="text-4xl font-mono contact-title">Contact</h1>
-                <div className="contact-container gap-6 mt-8 flex flex-col md:flex-row">
+        <div className="min-h-screen bg-[#10101A] flex items-center justify-center" >
+            <div className="contact w-full px-4 py-8 max-w-7xl mx-auto" id="contact">
+                <h1 className="text-4xl font-mono contact-title" >Contact</h1>
+                <div className="contact-container gap-6 mt-8 flex flex-col md:flex-row" >
                     <div className="contact-info bg-[#0B0B13] p-6 rounded-lg shadow-lg md:w-1/3">
                         <h2 className="text-3xl font-semibold text-[#2196F3] mb-4">Get in Touch</h2>
                         <div className="space-y-4">
@@ -28,13 +28,7 @@ const Contact = () => {
                                 <span className="transition-all duration-300">Hanoi, Vietnam</span>
                             </div>
                             <hr className="border-[#2196F3] my-4" />
-                            <div className="space-y-4">
-                                <h3 className="text-xl font-semibold text-[#2196F3]">Let’s Work Together</h3>
-                                <div className="flex items-center gap-3 contact-item">
-                                    <FaHandshake className="text-2xl transition-all duration-300" />
-                                    <span className="transition-all duration-300">.................................................................</span>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                     <div className="contact-form bg-[#0B0B13] p-6 rounded-lg shadow-lg md:w-2/3">
@@ -72,6 +66,14 @@ const Contact = () => {
                                 </span>
                             </Button>
                         </form>
+                    </div>
+                </div>
+                <div className="bg-[#0B0B13] p-6 rounded-lg shadow-lg mt-10">
+                    <div className="flex flex-col justify-center align-items-center">
+                        <h3 className="text-xl font-semibold text-[#2196F3]">Let’s Work Together</h3>
+                        <div className="flex items-center gap-3 contact-item">
+                            ..........<FaHandshake className="text-2xl transition-all duration-300" />..........
+                        </div>
                     </div>
                 </div>
             </div>
