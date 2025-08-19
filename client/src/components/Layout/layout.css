@@ -37,6 +37,19 @@
     margin-left: 19vw; 
 }
 
+.progress-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 5px;
+    background: linear-gradient(to bottom, #3b82f6, #06b6d4); 
+    transform-origin: top;
+    z-index: 9999;
+}
+
+
+
 @media (max-width: 600px) {
     .sidebar {
         display: none;

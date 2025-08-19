@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../About/about.css";
 import profilePic from "../../assets/images/taxuaco.jpg";
 import { Button } from "react-bootstrap";
@@ -10,27 +10,163 @@ import { FaJava } from "react-icons/fa6";
 import { VscVscode } from "react-icons/vsc";
 import { BsFiletypeSql } from "react-icons/bs";
 import { FiPhoneCall, FiDownload } from "react-icons/fi";
+// eslint-disable-next-line no-unused-vars
+import { motion, useInView } from "framer-motion";
 
 const About = () => {
+    const profileRef = useRef(null);
+    const educationRef = useRef(null);
+    const buttonsRef = useRef(null);
+    const languageRef = useRef(null);
+    const skillsRef = useRef(null);
+
+    const isProfileInView = useInView(profileRef, { once: false, margin: "-50px" });
+    const isEducationInView = useInView(educationRef, { once: false, margin: "-50px" });
+    const isButtonsInView = useInView(buttonsRef, { once: false, margin: "-50px" });
+    const isLanguageInView = useInView(languageRef, { once: false, margin: "-50px" });
+    const isSkillsInView = useInView(skillsRef, { once: false, margin: "-50px" });
+
+    const containerVariants = {
+        hidden: { opacity: 0, y: 50, rotate: 5 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            rotate: 0,
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 10,
+                duration: 0.8
+            }
+        },
+        exit: {
+            opacity: 0,
+            y: -20,
+            rotate: -5,
+            transition: {
+                duration: 0.4,
+                ease: "easeIn"
+            }
+        }
+    };
+
+    const imageVariants = {
+        hidden: { opacity: 0, scale: 0.7, rotate: -10 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            rotate: 0,
+            transition: {
+                type: "spring",
+                stiffness: 120,
+                damping: 12,
+                duration: 0.8
+            }
+        },
+        exit: {
+            opacity: 0,
+            scale: 0.9,
+            rotate: 10,
+            transition: {
+                duration: 0.4,
+                ease: "easeIn"
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, x: -50, scale: 0.8 },
+        visible: (i) => ({
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            transition: {
+                type: "spring",
+                stiffness: 80,
+                damping: 15,
+                delay: i * 0.15
+            }
+        }),
+        exit: {
+            opacity: 0,
+            x: 50,
+            scale: 0.8,
+            transition: {
+                duration: 0.3,
+                ease: "easeIn"
+            }
+        }
+    };
+
+    const skillHoverVariants = {
+        rest: { scale: 1, y: 0 },
+        hover: {
+            scale: 1.1,
+            y: -5,
+            transition: {
+                type: "spring",
+                stiffness: 300,
+                damping: 10
+            }
+        }
+    };
+
     return (
         <div className="min-h-screen bg-[#10101A] flex items-center justify-center">
             <div className="about w-full py-8 px-4">
-                <div className="flex flex-col md:flex-row gap-16">
-                    <div className="flex-shrink-0">
+                <div className="flex flex-col md:flex-row gap-16" id="about">
+                    <motion.div
+                        ref={profileRef}
+                        variants={imageVariants}
+                        initial="hidden"
+                        animate={isProfileInView ? "visible" : "exit"}
+                        className="flex-shrink-0"
+                    >
                         <img
                             src={profilePic}
                             alt="Profile-picture"
                             className="about-img mx-auto"
                         />
-                    </div>
+                    </motion.div>
                     <div className="flex-1 text-white space-y-6">
-                        <h1 className="text-4xl font-mono about-title">About Me</h1>
-                        <div className="education bg-[#0B0B13] p-6 rounded-lg shadow-lg pl-16">
+                        <motion.h1
+                            variants={containerVariants}
+                            initial="hidden"
+                            animate={isProfileInView ? "visible" : "exit"}
+                            className="text-4xl font-mono about-title"
+                        >
+                            About Me
+                        </motion.h1>
+                        <motion.div
+                            ref={educationRef}
+                            variants={containerVariants}
+                            initial="hidden"
+                            animate={isEducationInView ? "visible" : "exit"}
+                            className="education bg-[#0B0B13] p-6 rounded-lg shadow-lg pl-16"
+                        >
                             <h3 className="text-3xl text-[#2196F3] font-semibold">Education</h3>
-                            <p className="text-lg mt-2 fpt-university">FPT University Hanoi</p>
-                            <p className="text-lg fpt-university">Majoring in Software Engineering - GPA: 3.19/4</p>
-                        </div>
-                        <div className="about-buttons flex gap-4">
+                            <motion.p
+                                variants={itemVariants}
+                                custom={0}
+                                className="text-lg mt-2 fpt-university"
+                            >
+                                FPT University Hanoi
+                            </motion.p>
+                            <motion.p
+                                variants={itemVariants}
+                                custom={1}
+                                className="text-lg fpt-university"
+                            >
+                                Majoring in Software Engineering - GPA: 3.19/4
+                            </motion.p>
+                        </motion.div>
+                        <motion.div
+                            ref={buttonsRef}
+                            variants={containerVariants}
+                            initial="hidden"
+                            animate={isButtonsInView ? "visible" : "exit"}
+                            className="about-buttons flex gap-4 pl-16"
+                        >
                             <Button className="btn-about btn-contact">
                                 <span className="btn-content">
                                     <FiPhoneCall className="btn-icon" />
@@ -43,92 +179,147 @@ const About = () => {
                                     My Resumé
                                 </span>
                             </Button>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
-                <div className="language mt-8 bg-[#0B0B13] p-6 rounded-lg shadow-lg text-white pl-16">
+                <motion.div
+                    ref={languageRef}
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate={isLanguageInView ? "visible" : "exit"}
+                    className="language mt-8 bg-[#0B0B13] p-6 rounded-lg shadow-lg text-white pl-16"
+                >
                     <h2 className="text-3xl font-semibold text-[#2196F3]">Languages</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 ml-8">
-                        <p className="text-lg language-english">English: Intermediate</p>
-                        <p className="text-lg language-vietnamese">Vietnamese: Mother Tongue</p>
-                        <p className="text-lg language-japanese">Japanese: Basic</p>
+                        {[
+                            { text: "English: Intermediate", className: "language-english" },
+                            { text: "Vietnamese: Mother Tongue", className: "language-vietnamese" },
+                            { text: "Japanese: Basic", className: "language-japanese" }
+                        ].map((lang, index) => (
+                            <motion.p
+                                key={index}
+                                variants={itemVariants}
+                                custom={index}
+                                className={`text-lg ${lang.className}`}
+                            >
+                                {lang.text}
+                            </motion.p>
+                        ))}
                     </div>
-                </div>
-                <div className="language mt-8 bg-[#0B0B13] p-6 rounded-lg shadow-lg text-white pl-16">
+                </motion.div>
+                <motion.div
+                    ref={skillsRef}
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate={isSkillsInView ? "visible" : "exit"}
+                    className="language mt-8 bg-[#0B0B13] p-6 rounded-lg shadow-lg text-white pl-16"
+                >
                     <h2 className="text-3xl font-semibold text-[#2196F3]">Skills</h2>
                     <div className="mt-4 space-y-6">
                         <div>
                             <h3 className="text-xl font-semibold">Programming Languages</h3>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
-                                <div className="flex items-center gap-2 skill-item skill-cplusplus">
-                                    <SiCplusplus className="text-5xl" />
-                                    <span>C/C++</span>
-                                </div>
-                                <div className="flex items-center gap-2 skill-item skill-java">
-                                    <FaJava className="text-5xl" />
-                                    <span>Java</span>
-                                </div>
-                                <div className="flex items-center gap-2 skill-item skill-javascript">
-                                    <SiJavascript className="text-5xl" />
-                                    <span>Javascript</span>
-                                </div>
+                                {[
+                                    { icon: <SiCplusplus className="text-5xl" />, text: "C/C++", className: "skill-cplusplus" },
+                                    { icon: <FaJava className="text-5xl" />, text: "Java", className: "skill-java" },
+                                    { icon: <SiJavascript className="text-5xl" />, text: "Javascript", className: "skill-javascript" }
+                                ].map((skill, index) => (
+                                    <motion.div
+                                        key={index}
+                                        variants={itemVariants}
+                                        custom={index}
+                                        whileHover="hover"
+                                        initial="rest"
+                                        animate="rest"
+                                        className={`flex items-center gap-2 skill-item ${skill.className}`}
+                                    >
+                                        <motion.div variants={skillHoverVariants}>
+                                            {skill.icon}
+                                        </motion.div>
+                                        <motion.span variants={skillHoverVariants}>
+                                            {skill.text}
+                                        </motion.span>
+                                    </motion.div>
+                                ))}
                             </div>
                         </div>
                         <div>
                             <h3 className="text-xl font-semibold">Frameworks & Libraries</h3>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
-                                <div className="flex items-center gap-2 skill-item skill-react">
-                                    <SiReact className="text-5xl" />
-                                    <span>ReactJS</span>
-                                </div>
-                                <div className="flex items-center gap-2 skill-item skill-bootstrap">
-                                    <SiBootstrap className="text-5xl" />
-                                    <span>Bootstrap</span>
-                                </div>
-                                <div className="flex items-center gap-2 skill-item skill-tailwind">
-                                    <SiTailwindcss className="text-5xl" />
-                                    <span>TailwindCSS</span>
-                                </div>
+                                {[
+                                    { icon: <SiReact className="text-5xl" />, text: "ReactJS", className: "skill-react" },
+                                    { icon: <SiBootstrap className="text-5xl" />, text: "Bootstrap", className: "skill-bootstrap" },
+                                    { icon: <SiTailwindcss className="text-5xl" />, text: "TailwindCSS", className: "skill-tailwind" }
+                                ].map((skill, index) => (
+                                    <motion.div
+                                        key={index}
+                                        variants={itemVariants}
+                                        custom={index}
+                                        whileHover="hover"
+                                        initial="rest"
+                                        animate="rest"
+                                        className={`flex items-center gap-2 skill-item ${skill.className}`}
+                                    >
+                                        <motion.div variants={skillHoverVariants}>
+                                            {skill.icon}
+                                        </motion.div>
+                                        <motion.span variants={skillHoverVariants}>
+                                            {skill.text}
+                                        </motion.span>
+                                    </motion.div>
+                                ))}
                             </div>
                         </div>
                         <div>
                             <h3 className="text-xl font-semibold">Tools</h3>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
-                                <div className="flex items-center gap-2 skill-item skill-vscode">
-                                    <VscVscode className="text-5xl" />
-                                    <span>Visual Studio Code</span>
-                                </div>
-                                <div className="flex items-center gap-2 skill-item skill-intellij">
-                                    <SiIntellijidea className="text-5xl" />
-                                    <span>IntelliJ IDEA</span>
-                                </div>
-                                <div className="flex items-center gap-2 skill-item skill-github">
-                                    <SiGithub className="text-5xl" />
-                                    <span>Git/Github</span>
-                                </div>
-                                <div className="flex items-center gap-2 skill-item skill-sqlserver">
-                                    <BsFiletypeSql className="text-5xl" />
-                                    <span>SQL Server</span>
-                                </div>
-                                <div className="flex items-center gap-2 skill-item skill-mysql">
-                                    <SiMysql className="text-5xl" />
-                                    <span>MySQL</span>
-                                </div>
-                                <div className="flex items-center gap-2 skill-item skill-mongodb">
-                                    <SiMongodb className="text-5xl" />
-                                    <span>MongoDB</span>
-                                </div>
+                                {[
+                                    { icon: <VscVscode className="text-5xl" />, text: "Visual Studio Code", className: "skill-vscode" },
+                                    { icon: <SiIntellijidea className="text-5xl" />, text: "IntelliJ IDEA", className: "skill-intellij" },
+                                    { icon: <SiGithub className="text-5xl" />, text: "Git/Github", className: "skill-github" },
+                                    { icon: <BsFiletypeSql className="text-5xl" />, text: "SQL Server", className: "skill-sqlserver" },
+                                    { icon: <SiMysql className="text-5xl" />, text: "MySQL", className: "skill-mysql" },
+                                    { icon: <SiMongodb className="text-5xl" />, text: "MongoDB", className: "skill-mongodb" }
+                                ].map((skill, index) => (
+                                    <motion.div
+                                        key={index}
+                                        variants={itemVariants}
+                                        custom={index}
+                                        whileHover="hover"
+                                        initial="rest"
+                                        animate="rest"
+                                        className={`flex items-center gap-2 skill-item ${skill.className}`}
+                                    >
+                                        <motion.div variants={skillHoverVariants}>
+                                            {skill.icon}
+                                        </motion.div>
+                                        <motion.span variants={skillHoverVariants}>
+                                            {skill.text}
+                                        </motion.span>
+                                    </motion.div>
+                                ))}
                             </div>
                         </div>
                         <div>
                             <h3 className="text-xl font-semibold">Platform</h3>
-                            <div className="flex items-center gap-2 skill-item skill-nodejs mt-2">
-                                <FaNodeJs className="text-5xl" />
-                                <span>Node.js</span>
-                            </div>
+                            <motion.div
+                                variants={itemVariants}
+                                custom={0}
+                                whileHover="hover"
+                                initial="rest"
+                                animate="rest"
+                                className="flex items-center gap-2 skill-item skill-nodejs mt-2"
+                            >
+                                <motion.div variants={skillHoverVariants}>
+                                    <FaNodeJs className="text-5xl" />
+                                </motion.div>
+                                <motion.span variants={skillHoverVariants}>
+                                    Node.js
+                                </motion.span>
+                            </motion.div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
     );

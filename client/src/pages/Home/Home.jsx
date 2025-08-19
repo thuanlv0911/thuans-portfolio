@@ -1,13 +1,27 @@
 import React from 'react';
+// import { useTheme } from "../../context/ThemeContext";
 import './home.css';
 import Typewriter from 'typewriter-effect';
 import { FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
 import profilePic from '../../assets/images/hxx.jpg';
 import { Button } from 'react-bootstrap';
+import { BsMoonStars, BsSun } from "react-icons/bs";
 
 const Home = () => {
+
+    // const [theme, setTheme] = useTheme();
+    // const handleTheme = () => {
+    //     setTheme((prevState) => (prevState === "light" ? "dark" : "light"));
+    // };
     return (
-        <div className="flex items-center justify-center min-h-screen">
+        <div className="flex items-center justify-center min-h-screen" id="home">
+            {/* <div className="theme-btn" onClick={handleTheme}>
+                {theme === "light" ? (
+                    <BsMoonStars size={30} />
+                ) : (
+                    <BsSun size={30} />
+                )}
+            </div> */}
             <div className="container flex flex-col md:flex-row items-center justify-between gap-8 px-4">
                 <div className="home-content flex-1">
                     <h2 className="text-3xl">👋Hi, I'm</h2>

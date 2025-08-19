@@ -8,6 +8,7 @@ import { TbCertificate } from "react-icons/tb";
 import { BsDiagram3 } from "react-icons/bs";
 import { FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
 import { FaRegCopyright } from "react-icons/fa6";
+import { Link } from 'react-scroll';
 
 const Menus = ({ toggle }) => {
     return (
@@ -16,37 +17,50 @@ const Menus = ({ toggle }) => {
                 <>
                     <div className="navbar-profile-pic">
                         <a href="#">
-                            <img src={profilePic} alt="Profile-picture" className="about-img mx-auto md:mx-0"
-                            />
+                            <img src={profilePic} alt="Profile-picture" className="about-img mx-auto md:mx-0" />
                         </a>
                     </div>
                     <h3 className="text-center text-white text-2xl fw-light">Le Van Thuan</h3>
                     <div className="navbar-items flex-1">
                         <div className="navbar-item">
-                            <div className="navbar-link">
-                                <IoHomeOutline />Home
-                            </div>
+                            <Link to="home" className="navbar-link" spy={true}
+                                smooth={true}
+                                offset={-100}
+                                duration={100} >
+                                <IoHomeOutline /> Home
+                            </Link>
                         </div>
-                        <div className='navbar-item'>
-                            <div className="navbar-link">
-                                <GrContactInfo />About Me
-                            </div>
+                        <div className="navbar-item">
+                            <Link to="about" className="navbar-link" spy={true}
+                                smooth={true}
+                                offset={-100}
+                                duration={100} >
+                                <GrContactInfo /> About Me
+                            </Link>
                         </div>
-                        <div className='navbar-item'>
-                            <div className="navbar-link">
-                                <BsDiagram3 />Projects
-                            </div>
+                        <div className="navbar-item">
+                            <Link to="projects" className="navbar-link" spy={true}
+                                smooth={true}
+                                offset={-100}
+                                duration={100} >
+                                <BsDiagram3 /> Projects
+                            </Link>
                         </div>
-                        <div className='navbar-item'>
-                            <div className="navbar-link">
-                                <TbCertificate />Certifications
-                            </div>
+                        <div className="navbar-item">
+                            <Link to="certifications" className="navbar-link" spy={true}
+                                smooth={true}
+                                offset={-100}
+                                duration={100} >
+                                <TbCertificate /> Certifications
+                            </Link>
                         </div>
-                        <div className='navbar-item'>
-                            <div className="navbar-link">
-                                <HiOutlineMail />
-                                Contact
-                            </div>
+                        <div className="navbar-item">
+                            <Link to="contact" className="navbar-link" spy={true}
+                                smooth={true}
+                                offset={-100}
+                                duration={100} >
+                                <HiOutlineMail /> Contact
+                            </Link>
                         </div>
                     </div>
                     <div className="mt-auto flex flex-col items-center gap-4 text-white pb-4">
@@ -72,30 +86,45 @@ const Menus = ({ toggle }) => {
                         <img src={profilePic} alt="Profile-picture" />
                     </div>
                     <div className="navbar-items-icons flex-1">
-                        <div className='navbar-item-icons'>
-                            <div className="navbar-link-icons">
+                        <div className="navbar-item-icons">
+                            <Link to="home" className="navbar-link-icons" spy={true}
+                                smooth={true}
+                                offset={-100}
+                                duration={100} >
                                 <IoHomeOutline title="Home" />
-                            </div>
+                            </Link>
                         </div>
-                        <div className='navbar-item-icons'>
-                            <div className="navbar-link-icons">
-                                <GrContactInfo title="About me" />
-                            </div>
+                        <div className="navbar-item-icons">
+                            <Link to="about" className="navbar-link-icons" spy={true}
+                                smooth={true}
+                                offset={-100}
+                                duration={100} >
+                                <GrContactInfo title="About Me" />
+                            </Link>
                         </div>
-                        <div className='navbar-item-icons'>
-                            <div className="navbar-link-icons">
+                        <div className="navbar-item-icons">
+                            <Link to="projects" className="navbar-link-icons" spy={true}
+                                smooth={true}
+                                offset={-100}
+                                duration={100} >
                                 <BsDiagram3 title="Projects" />
-                            </div>
+                            </Link>
                         </div>
-                        <div className='navbar-item-icons'>
-                            <div className="navbar-link-icons">
+                        <div className="navbar-item-icons">
+                            <Link to="certifications" className="navbar-link-icons" spy={true}
+                                smooth={true}
+                                offset={-100}
+                                duration={100} >
                                 <TbCertificate title="Certifications" />
-                            </div>
+                            </Link>
                         </div>
-                        <div className='navbar-item-icons'>
-                            <div className="navbar-link-icons">
+                        <div className="navbar-item-icons">
+                            <Link to="contact" className="navbar-link-icons" spy={true}
+                                smooth={true}
+                                offset={-100}
+                                duration={100} >
                                 <HiOutlineMail title="Contact" />
-                            </div>
+                            </Link>
                         </div>
                     </div>
                     <div className="mt-auto flex flex-col items-center gap-4 text-white pb-4">

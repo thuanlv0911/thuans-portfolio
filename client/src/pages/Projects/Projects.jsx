@@ -9,8 +9,8 @@ import { BsFiletypeSql } from "react-icons/bs";
 
 const Projects = () => {
     return (
-        <div className="min-h-screen bg-[#10101A] flex items-center justify-center">
-            <div className="projects w-full px-4 py-8">
+        <div className="min-h-screen bg-[#10101A] flex items-center justify-center" >
+            <div className="projects w-full px-4 py-8" id="projects">
                 <h1 className="text-4xl font-mono projects-title">Projects</h1>
                 <div className="card-container grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
                     <div className="card-item bg-[#0B0B13] rounded-lg shadow-lg p-4 flex flex-col relative overflow-hidden">
