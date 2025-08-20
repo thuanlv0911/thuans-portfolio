@@ -1,107 +1,160 @@
 .contact-title {
-  color: #fff;
-  position: relative;
-  padding-left: 20px;
+    position: relative;
+    padding-left: 20px;
+}
+
+:where(.light) .contact-title {
+    color: #fff;
+}
+
+:where(.dark) .contact-title {
+    color: #10101A;
 }
 
 .contact-title::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: -10px;
-  width: 12px;
-  height: 12px;
-  background-color: #2196F3;
-  border-radius: 50%;
-  box-shadow: 0 0 8px rgba(33, 150, 243, 0.5);
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -10px;
+    width: 12px;
+    height: 12px;
+    background-color: #2196F3;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(33, 150, 243, 0.5);
 }
 
 .contact-title::after {
-  content: "";
-  position: absolute;
-  left: 5px;
-  top: 8px;
-  width: 2px;
-  height: 100%;
-  background-color: #2196F3;
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 8px;
+    width: 2px;
+    height: 100%;
+    background-color: #2196F3;
 }
 
 .contact-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 @media (min-width: 768px) {
-  .contact-container {
-    flex-direction: row;
-  }
+    .contact-container {
+        flex-direction: row;
+    }
 }
 
 .contact-info {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+:where(.light) .contact-info {
+    background-color: #0B0B13;
+}
+
+:where(.dark) .contact-info {
+    background-color: #eee;
 }
 
 .contact-info:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 20px rgba(33, 150, 243, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(33, 150, 243, 0.3);
 }
 
 .contact-form {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+:where(.light) .contact-form {
+    background-color: #0B0B13;
+}
+
+:where(.dark) .contact-form {
+    background-color: #eee;
 }
 
 .contact-form:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 20px rgba(33, 150, 243, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(33, 150, 243, 0.3);
 }
 
 .btn-about {
-  background-color: #2196F3 !important;
-  color: white !important;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    background-color: #2196F3 !important;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+:where(.light) .btn-about {
+    color: #10101A !important;
+}
+
+:where(.dark) .btn-about {
+    color: #fff !important;
 }
 
 .btn-about:hover {
-  background-color: #fff !important;
-  color: #2196F3 !important;
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(33, 150, 243, 0.4);
+    background-color: #fff !important;
+    color: #2196F3 !important;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(33, 150, 243, 0.4);
 }
 
 .btn-content {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .btn-icon {
-  opacity: 0;
-  width: 0;
-  transition: all 0.3s ease;
+    opacity: 0;
+    width: 0;
+    transition: all 0.3s ease;
+}
+
+:where(.light) .btn-icon {
+    color: #2196F3;
+}
+
+:where(.dark) .btn-icon {
+    color: #2196F3;
 }
 
 .btn-about:hover .btn-icon {
-  opacity: 1;
-  width: 20px;
+    opacity: 1;
+    width: 20px;
 }
 
 .contact-item {
-  cursor: pointer;
-  color: #fff;
+    cursor: pointer;
+}
+
+:where(.light) .contact-item {
+    color: #fff;
+}
+
+:where(.dark) .contact-item {
+    color: #10101A;
 }
 
 .contact-item:hover svg {
-  color: #2196F3;
-  transform: scale(1.2);
+    color: #2196F3;
+    transform: scale(1.2);
 }
 
 .contact-item:hover span {
-  color: #2196F3;
+    color: #2196F3;
+}
+
+:where(.light) .mxh-icons svg {
+    border-color: #fff;
+}
+
+:where(.dark) .mxh-icons svg {
+    border-color: #fff;
 }

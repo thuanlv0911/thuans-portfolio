@@ -12,6 +12,7 @@ import { BsFiletypeSql } from "react-icons/bs";
 import { FiPhoneCall, FiDownload } from "react-icons/fi";
 // eslint-disable-next-line no-unused-vars
 import { motion, useInView } from "framer-motion";
+import { useTheme } from "../../context/ThemeContext";
 
 const imageVariants = {
     hidden: { opacity: 0, x: -50 },
@@ -137,6 +138,7 @@ const skillGroupVariants = {
 };
 
 const About = () => {
+    const { theme } = useTheme();
     const profileRef = useRef(null);
     const educationRef = useRef(null);
     const buttonsRef = useRef(null);
@@ -150,8 +152,8 @@ const About = () => {
     const isSkillsInView = useInView(skillsRef, { once: false, margin: "-50px" });
 
     return (
-        <div className="min-h-screen bg-[#10101A] flex items-center justify-center">
-            <div className="about w-full py-8 px-4" id="about">
+        <div className={`min-h-screen flex items-center justify-center ${theme === "light" ? "bg-[#10101A]" : "bg-[#fff]"}`} id="about">
+            <div className="about w-full py-8 px-4">
                 <div className="flex flex-col md:flex-row gap-16">
                     <motion.div
                         ref={profileRef}
@@ -166,12 +168,12 @@ const About = () => {
                             className="about-img mx-auto"
                         />
                     </motion.div>
-                    <div className="flex-1 text-white space-y-6">
+                    <div className="flex-1 space-y-6">
                         <motion.h1
                             variants={containerVariants}
                             initial="hidden"
                             animate={isProfileInView ? "visible" : "exit"}
-                            className="text-4xl font-mono about-title"
+                            className={`text-4xl font-mono about-title ${theme === "light" ? "text-white" : "text-[#10101A]"}`}
                         >
                             About Me
                         </motion.h1>
@@ -180,20 +182,20 @@ const About = () => {
                             variants={containerVariants}
                             initial="hidden"
                             animate={isEducationInView ? "visible" : "exit"}
-                            className="education bg-[#0B0B13] p-6 rounded-lg shadow-lg pl-16"
+                            className={`education p-6 rounded-lg pl-16 ${theme === "light" ? "bg-[#0B0B13]" : "bg-[#eee]"}`}
                         >
                             <h3 className="text-3xl text-[#2196F3] font-semibold">Education</h3>
                             <motion.p
                                 variants={itemVariants}
                                 custom={0}
-                                className="text-lg mt-2 fpt-university"
+                                className={`text-lg fpt-university ${theme === "light" ? "text-white" : "text-[#10101A]"}`}
                             >
                                 FPT University Hanoi
                             </motion.p>
                             <motion.p
                                 variants={itemVariants}
                                 custom={1}
-                                className="text-lg fpt-university"
+                                className={`text-lg fpt-university ${theme === "light" ? "text-white" : "text-[#10101A]"}`}
                             >
                                 Majoring in Software Engineering - GPA: 3.19/4
                             </motion.p>
@@ -225,7 +227,7 @@ const About = () => {
                     variants={containerVariants}
                     initial="hidden"
                     animate={isLanguageInView ? "visible" : "exit"}
-                    className="language mt-8 bg-[#0B0B13] p-6 rounded-lg shadow-lg text-white pl-16"
+                    className={`language mt-8 p-6 rounded-lg pl-16 ${theme === "light" ? "bg-[#0B0B13]" : "bg-[#eee]"}`}
                 >
                     <h2 className="text-3xl font-semibold text-[#2196F3]">Languages</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 ml-8">
@@ -238,7 +240,7 @@ const About = () => {
                                 key={index}
                                 variants={itemVariants}
                                 custom={index}
-                                className={`text-lg ${lang.className}`}
+                                className={`text-lg ${lang.className} ${theme === "light" ? "text-white" : "text-[#10101A]"}`}
                             >
                                 {lang.text}
                             </motion.p>
@@ -250,7 +252,7 @@ const About = () => {
                     variants={containerVariants}
                     initial="hidden"
                     animate={isSkillsInView ? "visible" : "exit"}
-                    className="language mt-8 bg-[#0B0B13] p-6 rounded-lg shadow-lg text-white pl-16"
+                    className={`language mt-8 p-6 rounded-lg pl-16 ${theme === "light" ? "bg-[#0B0B13]" : "bg-[#eee]"}`}
                 >
                     <h2 className="text-3xl font-semibold text-[#2196F3]">Skills</h2>
                     <motion.div
@@ -260,7 +262,7 @@ const About = () => {
                         className="mt-4 space-y-6"
                     >
                         <motion.div variants={skillGroupVariants}>
-                            <h3 className="text-xl font-semibold">Programming Languages</h3>
+                            <h3 className={`text-xl font-semibold ${theme === "light" ? "text-white" : "text-[#10101A]"}`}>Programming Languages</h3>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
                                 {[
                                     { icon: <SiCplusplus className="text-5xl" />, text: "C/C++", className: "skill-cplusplus" },
@@ -279,7 +281,7 @@ const About = () => {
                                         <motion.div variants={skillHoverVariants}>
                                             {skill.icon}
                                         </motion.div>
-                                        <motion.span variants={skillHoverVariants}>
+                                        <motion.span variants={skillHoverVariants} className={theme === "light" ? "text-white" : "text-[#10101A]"}>
                                             {skill.text}
                                         </motion.span>
                                     </motion.div>
@@ -287,7 +289,7 @@ const About = () => {
                             </div>
                         </motion.div>
                         <motion.div variants={skillGroupVariants}>
-                            <h3 className="text-xl font-semibold">Frameworks & Libraries</h3>
+                            <h3 className={`text-xl font-semibold ${theme === "light" ? "text-white" : "text-[#10101A]"}`}>Frameworks & Libraries</h3>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
                                 {[
                                     { icon: <SiReact className="text-5xl" />, text: "ReactJS", className: "skill-react" },
@@ -306,7 +308,7 @@ const About = () => {
                                         <motion.div variants={skillHoverVariants}>
                                             {skill.icon}
                                         </motion.div>
-                                        <motion.span variants={skillHoverVariants}>
+                                        <motion.span variants={skillHoverVariants} className={theme === "light" ? "text-white" : "text-[#10101A]"}>
                                             {skill.text}
                                         </motion.span>
                                     </motion.div>
@@ -314,7 +316,7 @@ const About = () => {
                             </div>
                         </motion.div>
                         <motion.div variants={skillGroupVariants}>
-                            <h3 className="text-xl font-semibold">Tools</h3>
+                            <h3 className={`text-xl font-semibold ${theme === "light" ? "text-white" : "text-[#10101A]"}`}>Tools</h3>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
                                 {[
                                     { icon: <VscVscode className="text-5xl" />, text: "Visual Studio Code", className: "skill-vscode" },
@@ -336,7 +338,7 @@ const About = () => {
                                         <motion.div variants={skillHoverVariants}>
                                             {skill.icon}
                                         </motion.div>
-                                        <motion.span variants={skillHoverVariants}>
+                                        <motion.span variants={skillHoverVariants} className={theme === "light" ? "text-white" : "text-[#10101A]"}>
                                             {skill.text}
                                         </motion.span>
                                     </motion.div>
@@ -344,7 +346,7 @@ const About = () => {
                             </div>
                         </motion.div>
                         <motion.div variants={skillGroupVariants}>
-                            <h3 className="text-xl font-semibold">Platform</h3>
+                            <h3 className={`text-xl font-semibold ${theme === "light" ? "text-white" : "text-[#10101A]"}`}>Platform</h3>
                             <motion.div
                                 variants={itemVariants}
                                 custom={0}
@@ -356,7 +358,7 @@ const About = () => {
                                 <motion.div variants={skillHoverVariants}>
                                     <FaNodeJs className="text-5xl" />
                                 </motion.div>
-                                <motion.span variants={skillHoverVariants}>
+                                <motion.span variants={skillHoverVariants} className={theme === "light" ? "text-white" : "text-[#10101A]"}>
                                     Node.js
                                 </motion.span>
                             </motion.div>
