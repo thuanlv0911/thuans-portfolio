@@ -12,7 +12,6 @@ import { Link } from 'react-scroll';
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 
-// Variants cho avatar
 const avatarVariants = {
     hidden: { opacity: 0, scale: 0.7 },
     visible: {
@@ -23,7 +22,6 @@ const avatarVariants = {
     exit: { opacity: 0, scale: 0.7, transition: { duration: 0.15, ease: "easeOut" } }
 };
 
-// Variants cho avatar trong trạng thái toggle=false
 const avatarIconVariants = {
     hidden: { opacity: 0, scale: 0.6 },
     visible: {
@@ -34,7 +32,6 @@ const avatarIconVariants = {
     exit: { opacity: 0, scale: 0.6, transition: { duration: 0.15, ease: "easeOut" } }
 };
 
-// Variants cho tên
 const nameVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: {
@@ -45,7 +42,6 @@ const nameVariants = {
     exit: { opacity: 0, y: -20, transition: { duration: 0.15, ease: "easeOut" } }
 };
 
-// Variants cho navbar items (stagger)
 const navbarContainerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -55,7 +51,6 @@ const navbarContainerVariants = {
     exit: { opacity: 0, transition: { duration: 0.15, ease: "easeOut" } }
 };
 
-// Variants cho từng navbar item
 const navbarItemVariants = {
     hidden: { opacity: 0, x: -50 },
     visible: {
@@ -66,7 +61,6 @@ const navbarItemVariants = {
     exit: { opacity: 0, x: -50, transition: { duration: 0.15, ease: "easeOut" } }
 };
 
-// Variants cho social icons và copyright
 const footerVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -77,7 +71,6 @@ const footerVariants = {
     exit: { opacity: 0, y: 20, transition: { duration: 0.15, ease: "easeOut" } }
 };
 
-// Variants cho hover effect của social icons
 const socialHoverVariants = {
     rest: { scale: 1, rotate: 0 },
     hover: {

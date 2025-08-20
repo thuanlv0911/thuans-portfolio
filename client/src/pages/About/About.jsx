@@ -13,6 +13,129 @@ import { FiPhoneCall, FiDownload } from "react-icons/fi";
 // eslint-disable-next-line no-unused-vars
 import { motion, useInView } from "framer-motion";
 
+const imageVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            type: "spring",
+            stiffness: 120,
+            damping: 12,
+            duration: 0.8
+        }
+    },
+    exit: {
+        opacity: 0,
+        x: -50,
+        transition: {
+            duration: 0.5,
+            ease: "easeIn"
+        }
+    }
+};
+
+const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            type: "spring",
+            stiffness: 100,
+            damping: 10,
+            duration: 0.8
+        }
+    },
+    exit: {
+        opacity: 0,
+        y: -20,
+        transition: {
+            duration: 0.5,
+            ease: "easeIn"
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, x: -50, scale: 0.8 },
+    visible: (i) => ({
+        opacity: 1,
+        x: 0,
+        scale: 1,
+        transition: {
+            type: "spring",
+            stiffness: 80,
+            damping: 15,
+            delay: i * 0.15
+        }
+    }),
+    exit: {
+        opacity: 0,
+        x: 50,
+        scale: 0.8,
+        transition: {
+            duration: 0.5,
+            ease: "easeIn"
+        }
+    }
+};
+
+const skillHoverVariants = {
+    rest: { scale: 1, y: 0 },
+    hover: {
+        scale: 1.1,
+        y: -10,
+        transition: {
+            type: "spring",
+            stiffness: 300,
+            damping: 10
+        }
+    }
+};
+
+const skillContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.5,
+            delayChildren: 0.2
+        }
+    },
+    exit: {
+        opacity: 0,
+        transition: {
+            staggerChildren: 0.15,
+            staggerDirection: -1
+        }
+    }
+};
+
+const skillGroupVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.8 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: {
+            type: "spring",
+            stiffness: 80,
+            damping: 15,
+            duration: 1.0
+        }
+    },
+    exit: {
+        opacity: 0,
+        y: -20,
+        scale: 0.8,
+        transition: {
+            duration: 0.5,
+            ease: "easeIn"
+        }
+    }
+};
+
 const About = () => {
     const profileRef = useRef(null);
     const educationRef = useRef(null);
@@ -26,131 +149,8 @@ const About = () => {
     const isLanguageInView = useInView(languageRef, { once: false, margin: "-50px" });
     const isSkillsInView = useInView(skillsRef, { once: false, margin: "-50px" });
 
-    const containerVariants = {
-        hidden: { opacity: 0, y: 50, rotate: 5 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            rotate: 0,
-            transition: {
-                type: "spring",
-                stiffness: 100,
-                damping: 10,
-                duration: 0.8
-            }
-        },
-        exit: {
-            opacity: 0,
-            y: -20,
-            rotate: -5,
-            transition: {
-                duration: 0.4,
-                ease: "easeIn"
-            }
-        }
-    };
-
-    const imageVariants = {
-        hidden: { opacity: 0, scale: 0.7, rotate: -10 },
-        visible: {
-            opacity: 1,
-            scale: 1,
-            rotate: 0,
-            transition: {
-                type: "spring",
-                stiffness: 120,
-                damping: 12,
-                duration: 0.8
-            }
-        },
-        exit: {
-            opacity: 0,
-            scale: 0.9,
-            rotate: 10,
-            transition: {
-                duration: 0.4,
-                ease: "easeIn"
-            }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, x: -50, scale: 0.8 },
-        visible: (i) => ({
-            opacity: 1,
-            x: 0,
-            scale: 1,
-            transition: {
-                type: "spring",
-                stiffness: 80,
-                damping: 15,
-                delay: i * 0.15
-            }
-        }),
-        exit: {
-            opacity: 0,
-            x: 50,
-            scale: 0.8,
-            transition: {
-                duration: 0.4,
-                ease: "easeIn"
-            }
-        }
-    };
-
-    const skillHoverVariants = {
-        rest: { scale: 1, y: 0 },
-        hover: {
-            scale: 1.1,
-            y: -10,
-            transition: {
-                type: "spring",
-                stiffness: 300,
-                damping: 10
-            }
-        }
-    };
-
-    const skillContainerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.3
-            }
-        },
-        exit: {
-            opacity: 0,
-            transition: {
-                staggerChildren: 0.15,
-                staggerDirection: -1
-            }
-        }
-    };
-
-    const skillGroupVariants = {
-        hidden: { opacity: 0, y: 30, scale: 0.8 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            transition: {
-                type: "spring",
-                stiffness: 100,
-                damping: 12,
-                duration: 0.8
-            }
-        },
-        exit: {
-            opacity: 0,
-            y: -20,
-            scale: 0.9,
-            transition: { duration: 0.4, ease: "easeIn" }
-        }
-    };
-
     return (
-        <div className="min-h-screen bg-[#10101A] flex items-center justify-center" >
+        <div className="min-h-screen bg-[#10101A] flex items-center justify-center">
             <div className="about w-full py-8 px-4" id="about">
                 <div className="flex flex-col md:flex-row gap-16">
                     <motion.div
