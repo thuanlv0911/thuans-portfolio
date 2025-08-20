@@ -9,6 +9,7 @@ import { Button } from 'react-bootstrap';
 // eslint-disable-next-line no-unused-vars
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useTheme } from '../../context/ThemeContext';
+import { Link } from 'react-scroll';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -213,7 +214,10 @@ const Home = () => {
                         </div>
                     </motion.div>
                     <div className="home-button mt-4">
-                        <Button className="btn btn-about">About me</Button>
+                        <Button className="btn btn-about">
+                            <Link to="about" spy={true} smooth={true} offset={-100} duration={100}>About me
+                            </Link>
+                        </Button>
                     </div>
                 </motion.div>
                 <motion.div

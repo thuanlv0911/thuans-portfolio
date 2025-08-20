@@ -116,7 +116,7 @@ const Projects = () => {
                         className={`card-item rounded-lg p-4 flex flex-col relative overflow-hidden ${theme === "light" ? "bg-[#0B0B13]" : "bg-[#eee]"}`}
                     >
                         <motion.a
-                            href="#"
+                            href="https://github.com/Nodaco35/swp391-clubs-management"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="card-img-link"
@@ -172,7 +172,7 @@ const Projects = () => {
                         </div>
                         <div className="flex justify-end mt-4">
                             <motion.a
-                                href="#"
+                                href="https://github.com/Nodaco35/swp391-clubs-management"
                                 className={`details font-sans ${theme === "light" ? "text-[#fff]" : "text-[#10101A]"}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -264,7 +264,7 @@ const Projects = () => {
                         className={`card-item rounded-lg p-4 flex flex-col relative overflow-hidden ${theme === "light" ? "bg-[#0B0B13]" : "bg-[#eee]"}`}
                     >
                         <motion.a
-                            href="#"
+                            href="https://github.com/thuanlv0911/1912-mobile"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="card-img-link"
@@ -320,7 +320,7 @@ const Projects = () => {
                         </div>
                         <div className="flex justify-end mt-4">
                             <motion.a
-                                href="#"
+                                href="https://github.com/thuanlv0911/1912-mobile"
                                 className={`details font-sans ${theme === "light" ? "text-[#fff]" : "text-[#10101A]"}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
