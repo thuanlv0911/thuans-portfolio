@@ -1,135 +1,135 @@
 .projects-title {
-  color: #fff;
-  position: relative;
-  padding-left: 20px;
+    color: #fff;
+    position: relative;
+    padding-left: 20px;
 }
 
 .projects-title::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: -10px;
-  width: 12px;
-  height: 12px;
-  background-color: #2196F3;
-  border-radius: 50%;
-  box-shadow: 0 0 8px rgba(33, 150, 243, 0.5);
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -10px;
+    width: 12px;
+    height: 12px;
+    background-color: #2196F3;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(33, 150, 243, 0.5);
 }
 
 .projects-title::after {
-  content: "";
-  position: absolute;
-  left: 5px;
-  top: 8px;
-  width: 2px;
-  height: 100%;
-  background-color: #2196F3;
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 8px;
+    width: 2px;
+    height: 100%;
+    background-color: #2196F3;
 }
 
 .card-container {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
 }
 
 .card-item {
-  background-color: #0B0B13;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease;
-  position: relative;
+    background-color: #0B0B13;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    position: relative;
 }
 
 .card-item:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 .card-img-container {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 
 .card-img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .card-item:hover .card-img,
 .card-img-link:hover .card-img {
-  opacity: 0.5;
-  transform: scale(1.1);
+    opacity: 0.5;
+    transform: scale(1.1);
 }
 
 .card-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #2196F3;
-  font-size: 1rem;
-  font-weight: bold;
-  background: #ddd;
-  border-radius: 9999px;
-  padding: 0.2rem 1rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #2196F3;
+    font-size: 1rem;
+    font-weight: bold;
+    background: #ddd;
+    border-radius: 9999px;
+    padding: 0.2rem 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .card-item:hover .card-overlay {
-  opacity: 1;
+    opacity: 1;
 }
 
 .tech-stack {
-  margin-top: 1rem;
+    margin-top: 1rem;
 }
 
 .tech-pill {
-  display: inline-flex;
-  align-items: center;
-  background-color: #fff;
-  color: #2196F3;
-  border-radius: 9999px;
-  padding: 0.1rem 1rem;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  transition: all 0.3s ease;
-  position: relative;
+    display: inline-flex;
+    align-items: center;
+    background-color: #fff;
+    color: #2196F3;
+    border-radius: 9999px;
+    padding: 0.1rem 1rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .tech-pill:hover .tech-text {
-  opacity: 0;
+    opacity: 0;
 }
 
 .tech-pill:hover .tech-icon {
-  opacity: 1;
+    opacity: 1;
 }
 
 .tech-text {
-  transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .tech-icon {
-  opacity: 0;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.5rem;
-  transition: opacity 0.3s ease;
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    transition: opacity 0.3s ease;
 }
 
 .details {
-  color: #fff;
-  transition: transform 0.3s ease, color 0.3s ease;
-  text-decoration: none;
+    color: #fff;
+    transition: transform 0.3s ease, color 0.3s ease;
+    text-decoration: none;
 }
 
 .card-item:hover .details {
-  transform: translateX(10px);
-  color: #2196F3;
+    transform: translateX(5px);
+    color: #2196F3;
 }
