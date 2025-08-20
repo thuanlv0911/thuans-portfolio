@@ -293,7 +293,7 @@ const Menus = ({ toggle }) => {
                             </div>
                             <motion.div
                                 variants={footerVariants}
-                                className="text-sm"
+                                className="text-sm about-copyright"
                             >
                                 <FaRegCopyright title="thuanlv0911" />
                             </motion.div>

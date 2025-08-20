@@ -13,6 +13,7 @@ import { FiPhoneCall, FiDownload } from "react-icons/fi";
 // eslint-disable-next-line no-unused-vars
 import { motion, useInView } from "framer-motion";
 import { useTheme } from "../../context/ThemeContext";
+import { Link } from "react-scroll";
 
 const imageVariants = {
     hidden: { opacity: 0, x: -50 },
@@ -207,18 +208,28 @@ const About = () => {
                             animate={isButtonsInView ? "visible" : "exit"}
                             className="about-buttons flex gap-4 pl-16"
                         >
-                            <Button className="btn-about btn-contact">
-                                <span className="btn-content">
-                                    <FiPhoneCall className="btn-icon" />
-                                    Contact
-                                </span>
-                            </Button>
-                            <Button className="btn-about btn-resume">
+
+                            <Link to="contact" spy={true} smooth={true} offset={-100} duration={100}>
+                                <Button className="btn-about btn-contact">
+                                    <span className="btn-content">
+                                        <FiPhoneCall className="btn-icon" />
+                                        Contact
+                                    </span>
+                                </Button>
+                            </Link>
+                            <Button
+                                as="a"
+                                href="https://drive.google.com/file/d/1pZGIOhJ-CgGJri09DHKfcvIPgYLwJcHB/view"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn-about btn-resume"
+                            >
                                 <span className="btn-content">
                                     <FiDownload className="btn-icon" />
                                     My Resumé
                                 </span>
                             </Button>
+
                         </motion.div>
                     </div>
                 </div>
