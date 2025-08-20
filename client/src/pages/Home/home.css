@@ -1,52 +1,91 @@
+:where(.light) .home-content h2,
+:where(.light) .home-content p,
+:where(.light) .home-content .mxh-icons {
+    color: #fff; 
+}
 
-
-.home-content h2,
-.home-content p,
-.home-content .mxh-icons {
-    color: #fff;
+:where(.dark) .home-content h2,
+:where(.dark) .home-content p,
+:where(.dark) .home-content .mxh-icons {
+    color: #10101A;
 }
 
 .home-button .btn-about {
     background-color: #2196F3;
-    color: white;
     width: 120px;
     transition: all 1s;
 }
 
+:where(.light) .home-button .btn-about {
+    color: #10101A;
+}
+
+:where(.dark) .home-button .btn-about {
+    color: #fff; 
+}
+
 .home-button .btn-about:hover {
-    background-color: #ccc;
-    color: #2196F3;
+    background-color: #ccc; 
+    color: #2196F3; 
     width: 168px;
 }
 
 .profile-pic {
     border-radius: 50%;
-    object-fit: cover; 
-    border: 8px solid #2196F3;
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
- 
+    object-fit: cover;
+    border: 8px solid #2196F3; 
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .profile-pic:hover {
     transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(33, 150, 243, 0.3);
-  transition: all 0.5s;
+    box-shadow: 0 4px 20px rgba(33, 150, 243, 0.3); 
+    transition: all 0.5s;
+}
+
+.theme-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    width: 44px;
+    margin-top: 20px;
+    text-align: center;
+    position: fixed;
+    top: 20px;
+    right: 0;
+    cursor: pointer;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    z-index: 999;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+:where(.light) .theme-btn {
+    background-color: #333; 
+}
+
+:where(.dark) .theme-btn {
+    background-color: #ccc; 
+}
+
+:where(.light) .theme-btn svg {
+    color: #fff; 
+}
+
+:where(.dark) .theme-btn svg {
+    color: #10101A; 
+}
+
+:where(.light) .mxh-icons svg {
+    color: #10101A;
+}
+
+:where(.dark) .mxh-icons svg {
+    color: #fff; 
 }
 
 
-/* .theme-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  width: 50px;
-  background-color: #1e1e1e;
-  margin-top: 20px;
-  text-align: center;
-  position: fixed;
-  right: 0;
-  cursor: pointer;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  z-index: 1;
-} */
+:where(.light) .mxh-icons .bg-black svg {
+    color: #fff; 
+}

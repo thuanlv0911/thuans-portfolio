@@ -3,8 +3,15 @@
   width: 100%;
   max-width: 300px;
   height: auto;
-  border: 4px solid #2196F3;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+:where(.light) .about-img {
+  border: 4px solid #fff;
+}
+
+:where(.dark) .about-img {
+  border: 4px solid #eee;
 }
 
 .about-img:hover {
@@ -14,7 +21,6 @@
 
 .btn-about {
   background-color: #2196F3 !important;
-  color: white !important;
   border: none;
   padding: 10px 20px;
   border-radius: 8px;
@@ -22,6 +28,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+:where(.light) .btn-about {
+  color: #10101A !important;
+}
+
+:where(.dark) .btn-about {
+  color: #fff !important;
 }
 
 .btn-about:hover {
@@ -48,20 +62,41 @@
   width: 20px;
 }
 
+:where(.light) .btn-icon {
+  color: #2196F3;
+}
+
+:where(.dark) .btn-icon {
+  color: #2196F3;
+}
+
 .fpt-university {
   margin-left: 0px;
 }
 
-.education:hover .fpt-university {
+:where(.light) .education:hover .fpt-university {
   color: #F28C38;
 }
 
-.language:hover .language-vietnamese {
+:where(.dark) .education:hover .fpt-university {
+  color: #F28C38;
+}
+
+:where(.light) .language:hover .language-vietnamese {
   color: #FF0000;
 }
 
-.language:hover .language-english,
-.language:hover .language-japanese {
+:where(.dark) .language:hover .language-vietnamese {
+  color: #FF0000;
+}
+
+:where(.light) .language:hover .language-english,
+:where(.light) .language:hover .language-japanese {
+  color: #FFD700;
+}
+
+:where(.dark) .language:hover .language-english,
+:where(.dark) .language:hover .language-japanese {
   color: #FFD700;
 }
 
@@ -111,7 +146,10 @@
   transition: box-shadow 0.3s ease;
 }
 
+:where(.light) .skill-item span:hover {
+  color: #2196F3;
+}
 
-.skill-item span:hover {
+:where(.dark) .skill-item span:hover {
   color: #2196F3;
 }

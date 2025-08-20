@@ -116,7 +116,7 @@ const Menus = ({ toggle }) => {
                             variants={nameVariants}
                             initial="hidden"
                             animate={isInView ? "visible" : "exit"}
-                            className="text-center text-white text-2xl fw-light"
+                            className="about-name text-center text-2xl fw-light"
                         >
                             Le Van Thuan
                         </motion.h3>
@@ -195,7 +195,7 @@ const Menus = ({ toggle }) => {
                             </div>
                             <motion.div
                                 variants={footerVariants}
-                                className="flex items-center gap-1 text-sm"
+                                className="flex items-center gap-1 text-sm about-copyright"
                             >
                                 <FaRegCopyright /> thuanlv0911
                             </motion.div>

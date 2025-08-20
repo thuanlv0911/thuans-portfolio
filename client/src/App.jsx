@@ -11,7 +11,7 @@ function App() {
         smooth
         color="#2196F3"
         style={{
-          backgroundColor: "#fff",
+          backgroundColor: "#ddd",
           borderRadius: "80px",
           display: "flex",
           alignItems: "center",

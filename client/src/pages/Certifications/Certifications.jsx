@@ -5,21 +5,28 @@ import 'react-vertical-timeline-component/style.min.css';
 import { SiCoursera, SiCodeigniter } from "react-icons/si";
 import { GrCycle } from "react-icons/gr";
 import { RiCodeSSlashFill } from "react-icons/ri";
-
+import { useTheme } from "../../context/ThemeContext";
 import UXDesign from "../../assets/images/uxdesign.jpg";
 import WebDesign from "../../assets/images/webdesign.jpg";
 import SDLC from "../../assets/images/SDLC.jpg";
 
 const Certifications = () => {
+    const { theme } = useTheme();
+
     return (
-        <div className="min-h-screen bg-[#10101A] flex items-center justify-center pb-20" >
-            <div className="certifications w-full px-4 py-8" id="certifications">
-                <h1 className="text-4xl font-mono certifications-title">Certifications</h1>
+        <div className={`min-h-screen flex items-center justify-center pb-20 ${theme === "light" ? "bg-[#10101A]" : "bg-[#fff]"}`} id="certifications">
+            <div className="certifications w-full px-4 py-8">
+                <h1 className={`text-4xl font-mono certifications-title ${theme === "light" ? "text-white" : "text-[#10101A]"}`}>Certifications</h1>
                 <VerticalTimeline>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        contentStyle={{ background: '#0B0B13', color: '#fff', borderRadius: '0.5rem', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}
-                        contentArrowStyle={{ borderRight: '7px solid #0B0B13' }}
+                        contentStyle={{
+                            background: theme === "light" ? '#0B0B13' : '#eee',
+                            color: theme === "light" ? '#fff' : '#10101A',
+                            borderRadius: '0.5rem',
+                            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+                        }}
+                        contentArrowStyle={{ borderRight: `7px solid ${theme === "light" ? '#0B0B13' : '#eee'}` }}
                         date="September 2024"
                         iconStyle={{ background: '#2196F3', color: '#fff' }}
                         icon={<RiCodeSSlashFill />}
@@ -33,7 +40,7 @@ const Certifications = () => {
                             </a>
                             <div className="w-8/12 pl-4">
                                 <h2 className="certification-title text-2xl font-semibold">Basics of Web Development & Coding</h2>
-                                <span className="coursera-pill">
+                                <span className={`coursera-pill ${theme === "light" ? "bg-white text-[#2196F3]" : "bg-[#10101A]"}`}>
                                     <span className="coursera-text">Coursera</span>
                                     <SiCoursera className="coursera-logo" />
                                 </span>
@@ -42,8 +49,13 @@ const Certifications = () => {
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        contentStyle={{ background: '#0B0B13', color: '#fff', borderRadius: '0.5rem', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}
-                        contentArrowStyle={{ borderRight: '7px solid #0B0B13' }}
+                        contentStyle={{
+                            background: theme === "light" ? '#0B0B13' : '#eee',
+                            color: theme === "light" ? '#fff' : '#10101A',
+                            borderRadius: '0.5rem',
+                            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+                        }}
+                        contentArrowStyle={{ borderRight: `7px solid ${theme === "light" ? '#0B0B13' : '#eee'}` }}
                         date="January 2025"
                         iconStyle={{ background: '#2196F3', color: '#fff' }}
                         icon={<GrCycle />}
@@ -57,7 +69,7 @@ const Certifications = () => {
                             </a>
                             <div className="w-8/12 pl-4">
                                 <h2 className="certification-title text-2xl font-semibold">Software Development Lifecycle</h2>
-                                <span className="coursera-pill">
+                                <span className={`coursera-pill ${theme === "light" ? "bg-white text-[#2196F3]" : "bg-[#10101A]"}`}>
                                     <span className="coursera-text">Coursera</span>
                                     <SiCoursera className="coursera-logo" />
                                 </span>
@@ -66,8 +78,13 @@ const Certifications = () => {
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        contentStyle={{ background: '#0B0B13', color: '#fff', borderRadius: '0.5rem', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}
-                        contentArrowStyle={{ borderRight: '7px solid #0B0B13' }}
+                        contentStyle={{
+                            background: theme === "light" ? '#0B0B13' : '#eee',
+                            color: theme === "light" ? '#fff' : '#10101A',
+                            borderRadius: '0.5rem',
+                            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+                        }}
+                        contentArrowStyle={{ borderRight: `7px solid ${theme === "light" ? '#0B0B13' : '#eee'}` }}
                         date="May 2025"
                         iconStyle={{ background: '#2196F3', color: '#fff' }}
                         icon={<SiCodeigniter />}
@@ -81,7 +98,7 @@ const Certifications = () => {
                             </a>
                             <div className="w-8/12 pl-4">
                                 <h2 className="certification-title text-2xl font-semibold">User Experience Research and Design</h2>
-                                <span className="coursera-pill">
+                                <span className={`coursera-pill ${theme === "light" ? "bg-white text-[#2196F3]" : "bg-[#10101A]"}`}>
                                     <span className="coursera-text">Coursera</span>
                                     <SiCoursera className="coursera-logo" />
                                 </span>

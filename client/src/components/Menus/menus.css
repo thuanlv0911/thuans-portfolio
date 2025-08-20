@@ -6,8 +6,16 @@
     vertical-align: middle;
     margin: 0 auto;
     margin-top: 16px;
-    object-fit: cover; 
-    border: 4px solid whitesmoke; 
+    object-fit: cover;
+    transition: border-color 0.3s ease; 
+}
+
+:where(.light) .navbar-profile-pic img {
+    border: 4px solid #fff; 
+}
+
+:where(.dark) .navbar-profile-pic img {
+    border: 4px solid #fff; 
 }
 
 .navbar-items {
@@ -15,9 +23,16 @@
 }
 
 .navbar-item {
-    color: #fff;
     font-size: 20px;
     margin-top: 16px;
+}
+
+:where(.light) .navbar-item {
+    color: #fff; 
+}
+
+:where(.dark) .navbar-item {
+    color: #10101A; 
 }
 
 .navbar-link {
@@ -25,16 +40,14 @@
     align-items: center;
     margin-top: 12px;
     cursor: pointer;
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, transform;
     transition-duration: 200ms;
-
 }
 
 .navbar-link svg {
     margin-right: 16px;
     margin-left: 44px;
 }
-
 
 .navbar-profile-pic-icons img {
     border-radius: 90px;
@@ -44,6 +57,25 @@
     vertical-align: middle;
     margin: 0 auto;
     margin-top: 16px;
+    transition: border-color 0.3s ease; 
+}
+
+:where(.light) .navbar-profile-pic-icons img {
+    border: 1px solid #fff; 
+}
+
+:where(.dark) .navbar-profile-pic-icons img {
+    border: 1px solid #eee; 
+}
+
+:where(.light) .about-name,
+:where(.light) .about-copyright {
+    color: #fff;
+}
+
+:where(.dark) .about-name,
+:where(.dark) .about-copyright {
+    color: #10101A;
 }
 
 .navbar-items-icons {
@@ -51,9 +83,16 @@
 }
 
 .navbar-item-icons {
-    color: #fff;
     font-size: 20px;
     margin-top: 16px;
+}
+
+:where(.light) .navbar-item-icons {
+    color: #fff; 
+}
+
+:where(.dark) .navbar-item-icons {
+    color: #10101A; 
 }
 
 .navbar-link-icons {
@@ -62,44 +101,68 @@
     justify-content: center;
     margin-top: 12px;
     cursor: pointer;
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, transform;
     transition-duration: 200ms;
-
 }
 
 .navbar-link,
 .navbar-link-icons {
     text-decoration: none;
-    color: #fff;
+}
+
+:where(.light) .navbar-link,
+:where(.light) .navbar-link-icons {
+    color: #fff; 
+}
+
+:where(.dark) .navbar-link,
+:where(.dark) .navbar-link-icons {
+    color: #10101A; 
 }
 
 .navbar-link:hover,
 .navbar-link-icons:hover {
-    color: #2196F3;
+    color: #2196F3; 
     transform: scale(1.15);
 }
 
 .navbar-link.active,
 .navbar-link-icons.active {
-    color: #2196F3 !important;
-        transform: scale(1.15);
-
+    color: #2196F3 !important; 
+    transform: scale(1.15);
 }
-
 
 .social-icon {
-  color: #fff;
-  transition: color 0.2s ease;
+    transition: color 0.2s ease;
 }
 
+:where(.light) .social-icon {
+    color: #fff; 
+}
+
+:where(.dark) .social-icon {
+    color: #10101A; 
+}
+
+:where(.light) .social-icon:hover .facebook-icon,
 .social-icon:hover .facebook-icon {
-  color: #2196F3;
+    color: #2196F3; 
 }
 
+:where(.light) .social-icon:hover .instagram-icon,
 .social-icon:hover .instagram-icon {
-  color: #E1306C;
+    color: #E1306C; 
 }
 
+:where(.light) .social-icon:hover .github-icon,
 .social-icon:hover .github-icon {
-  color: #333;
+    color: #333; 
+}
+
+:where(.light) .mt-auto.text-white {
+    color: #fff; 
+}
+
+:where(.dark) .mt-auto.text-white {
+    color: #10101A; 
 }

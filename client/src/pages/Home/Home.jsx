@@ -2,10 +2,13 @@ import React, { useRef } from 'react';
 import './home.css';
 import Typewriter from 'typewriter-effect';
 import { FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
+import { BsMoonStars, BsSun } from "react-icons/bs";
+
 import profilePic from '../../assets/images/hxx.jpg';
 import { Button } from 'react-bootstrap';
 // eslint-disable-next-line no-unused-vars
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
+import { useTheme } from '../../context/ThemeContext';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -120,9 +123,17 @@ const Home = () => {
 
     const { scrollYProgress } = useScroll();
     const yParallax = useTransform(scrollYProgress, [0, 1], [0, -50]);
+    const { theme, toggleTheme } = useTheme();
 
     return (
         <div className="flex items-center justify-center min-h-screen" id="home">
+            <div className="theme-btn" onClick={toggleTheme}>
+                {theme === "light" ? (
+                    <BsSun size={30} />
+                ) : (
+                    <BsMoonStars size={30} />
+                )}
+            </div>
             <div className="container flex flex-col md:flex-row items-center justify-between gap-8 px-4">
                 <motion.div
                     ref={contentRef}

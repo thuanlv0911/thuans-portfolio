@@ -8,6 +8,7 @@ import { SiJavascript, SiReact, SiBootstrap, SiTailwindcss, SiMysql, SiVite } fr
 import { BsFiletypeSql } from "react-icons/bs";
 // eslint-disable-next-line no-unused-vars
 import { motion, useInView } from "framer-motion";
+import { useTheme } from "../../context/ThemeContext";
 
 const titleVariants = {
     hidden: { opacity: 0, y: -30 },
@@ -87,17 +88,18 @@ const detailsVariants = {
 };
 
 const Projects = () => {
+    const { theme } = useTheme();
     const containerRef = useRef(null);
     const isInView = useInView(containerRef, { once: false, margin: "-100px" });
 
     return (
-        <div className="min-h-screen bg-[#10101A] flex items-center justify-center">
-            <div className="projects w-full px-4 py-8" id="projects">
+        <div className={`min-h-screen flex items-center justify-center ${theme === "light" ? "bg-[#10101A]" : "bg-[#fff]"}`} id="projects">
+            <div className="projects w-full px-4 py-8">
                 <motion.h1
                     variants={titleVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
-                    className="text-4xl font-mono projects-title"
+                    className={`text-4xl font-mono projects-title ${theme === "light" ? "text-white" : "text-[#10101A]"}`}
                 >
                     Projects
                 </motion.h1>
@@ -111,7 +113,7 @@ const Projects = () => {
                     <motion.div
                         variants={cardVariants}
                         whileHover="hover"
-                        className="card-item bg-[#0B0B13] rounded-lg shadow-lg p-4 flex flex-col relative overflow-hidden"
+                        className={`card-item rounded-lg p-4 flex flex-col relative overflow-hidden ${theme === "light" ? "bg-[#0B0B13]" : "bg-[#eee]"}`}
                     >
                         <motion.a
                             href="#"
@@ -139,7 +141,7 @@ const Projects = () => {
                             variants={descriptionVariants}
                             initial="hidden"
                             animate={isInView ? "visible" : "hidden"}
-                            className="text-gray-300 mt-2 flex-grow"
+                            className={`${theme === "light" ? "text-gray-300" : "text-gray-700"} mt-2 flex-grow`}
                         >
                             UniClub is a web-based club management system built using Java EE technologies. The application enables club administrators and members to manage events, departments, and internal communications effectively.
                         </motion.p>
@@ -160,7 +162,7 @@ const Projects = () => {
                                     <motion.div
                                         key={index}
                                         variants={techPillVariants}
-                                        className="tech-pill"
+                                        className={`tech-pill ${theme === "light" ? "bg-white text-[#2196F3]" : "bg-[#10101A]"}`}
                                     >
                                         <span className="tech-text">{tech.text}</span>
                                         {tech.icon}
@@ -171,7 +173,7 @@ const Projects = () => {
                         <div className="flex justify-end mt-4">
                             <motion.a
                                 href="#"
-                                className="details font-semibold"
+                                className={`details font-sans ${theme === "light" ? "text-[#fff]" : "text-[#10101A]"}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 variants={detailsVariants}
@@ -185,7 +187,7 @@ const Projects = () => {
                     <motion.div
                         variants={cardVariants}
                         whileHover="hover"
-                        className="card-item bg-[#0B0B13] rounded-lg shadow-lg p-4 flex flex-col relative overflow-hidden"
+                        className={`card-item rounded-lg p-4 flex flex-col relative overflow-hidden ${theme === "light" ? "bg-[#0B0B13]" : "bg-[#eee]"}`}
                     >
                         <motion.a
                             href="#"
@@ -213,7 +215,7 @@ const Projects = () => {
                             variants={descriptionVariants}
                             initial="hidden"
                             animate={isInView ? "visible" : "hidden"}
-                            className="text-gray-300 mt-2 flex-grow"
+                            className={`${theme === "light" ? "text-gray-300" : "text-gray-700"} mt-2 flex-grow`}
                         >
                             Portfolio website showcasing my skills, projects, and achievements. Built with modern web technologies to provide a smooth and visually appealing user experience.
                         </motion.p>
@@ -234,7 +236,7 @@ const Projects = () => {
                                     <motion.div
                                         key={index}
                                         variants={techPillVariants}
-                                        className="tech-pill"
+                                        className={`tech-pill ${theme === "light" ? "bg-white text-[#2196F3]" : "bg-[#10101A] "}`}
                                     >
                                         <span className="tech-text">{tech.text}</span>
                                         {tech.icon}
@@ -245,7 +247,7 @@ const Projects = () => {
                         <div className="flex justify-end mt-4">
                             <motion.a
                                 href="#"
-                                className="details font-semibold"
+                                className={`details font-sans ${theme === "light" ? "text-[#fff]" : "text-[#10101A]"}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 variants={detailsVariants}
@@ -259,7 +261,7 @@ const Projects = () => {
                     <motion.div
                         variants={cardVariants}
                         whileHover="hover"
-                        className="card-item bg-[#0B0B13] rounded-lg shadow-lg p-4 flex flex-col relative overflow-hidden"
+                        className={`card-item rounded-lg p-4 flex flex-col relative overflow-hidden ${theme === "light" ? "bg-[#0B0B13]" : "bg-[#eee]"}`}
                     >
                         <motion.a
                             href="#"
@@ -287,7 +289,7 @@ const Projects = () => {
                             variants={descriptionVariants}
                             initial="hidden"
                             animate={isInView ? "visible" : "hidden"}
-                            className="text-gray-300 mt-2 flex-grow"
+                            className={`${theme === "light" ? "text-gray-300" : "text-gray-700"} mt-2 flex-grow`}
                         >
                             1912Mobile is a basic web application developed using JSP (JavaServer Pages), Java Servlet, JSTL (JavaServer Pages Standard Tag Library), and SQL Server as the database.
                         </motion.p>
@@ -308,7 +310,7 @@ const Projects = () => {
                                     <motion.div
                                         key={index}
                                         variants={techPillVariants}
-                                        className="tech-pill"
+                                        className={`tech-pill ${theme === "light" ? "bg-white text-[#2196F3]" : "bg-[#10101A]"}`}
                                     >
                                         <span className="tech-text">{tech.text}</span>
                                         {tech.icon}
@@ -319,7 +321,7 @@ const Projects = () => {
                         <div className="flex justify-end mt-4">
                             <motion.a
                                 href="#"
-                                className="details font-semibold"
+                                className={`details font-sans ${theme === "light" ? "text-[#fff]" : "text-[#10101A]"}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 variants={detailsVariants}
