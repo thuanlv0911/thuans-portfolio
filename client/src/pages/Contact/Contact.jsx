@@ -235,7 +235,7 @@ const Contact = () => {
                             variants={handshakeIconVariants}
                             className={`flex items-center gap-3 contact-item ${theme === "light" ? "text-white" : "text-[#10101A]"}`}
                         >
-                            ..........<FaHandshake className="text-2xl transition-all duration-300" />..........
+                            ...........<FaHandshake className="text-2xl transition-all duration-300" />...........
                         </motion.div>
                     </div>
                 </motion.div>
