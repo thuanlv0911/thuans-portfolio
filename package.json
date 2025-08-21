@@ -1,0 +1,24 @@
+{
+  "name": "thuans-portfolio",
+  "version": "1.0.0",
+  "description": "thuans portfolio",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thuanlv0911/thuans-portfolio.git"
+  },
+  "author": "thuanlv",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thuanlv0911/thuans-portfolio/issues"
+  },
+  "homepage": "https://github.com/thuanlv0911/thuans-portfolio#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0"
+  }
+}
