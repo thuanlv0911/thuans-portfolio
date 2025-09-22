@@ -37,6 +37,8 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .card-item {
@@ -177,4 +179,49 @@
 .card-item:hover .details {
     transform: translateX(5px);
     color: #2196F3;
+}
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 64em) {
+    .projects {
+        align-items: center;
+    }
+    .card-container {
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+    }
+    .projects-title {
+        text-align: left;
+        padding-left: 20px;
+    }
+    
+
+    .card-item {
+        margin: 0 auto;
+    }
+    .card-img {
+        max-height: 300px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 46.24em) {
+    .projects {
+        align-items: center;
+    }
+    .card-container {
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+    }
+    .projects-title {
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .card-item {
+        margin: 0 auto;
+    }
+    .card-img {
+        max-height: 200px;
+    }
 }

@@ -122,12 +122,12 @@ const Contact = () => {
 
     return (
         <div className={`min-h-screen flex items-center justify-center ${theme === "light" ? "bg-[#10101A]" : "bg-[#fff]"}`} id="contact">
-            <div className="contact w-full px-4 py-8 max-w-7xl mx-auto">
+            <div className="contact w-full px-4 py-8 mx-auto">
                 <motion.h1
                     variants={titleVariants}
                     initial="hidden"
                     animate={isContainerInView ? "visible" : "hidden"}
-                    className={`text-4xl font-mono contact-title ${theme === "light" ? "text-white" : "text-[#10101A]"}`}
+                    className={`text-4xl font-mono contact-title md:text-left ${theme === "light" ? "text-white" : "text-[#10101A]"}`}
                 >
                     Contact
                 </motion.h1>
@@ -140,9 +140,9 @@ const Contact = () => {
                 >
                     <motion.div
                         variants={infoVariants}
-                        className={`contact-info p-6 rounded-lg md:w-1/3 ${theme === "light" ? "bg-[#0B0B13]" : "bg-[#eee]"}`}
+                        className={`contact-info p-6 rounded-lg w-full md:w-2/5 ${theme === "light" ? "bg-[#0B0B13]" : "bg-[#eee]"}`}
                     >
-                        <h2 className="text-3xl font-semibold text-[#2196F3] mb-4">Get in Touch</h2>
+                        <h2 className="text-3xl font-semibold text-[#2196F3] mb-4 text-center md:text-left">Get in Touch</h2>
                         <div className="space-y-4">
                             {[
                                 { icon: <HiOutlineMail className="text-2xl transition-all duration-300" />, text: "thuanlv0911@gmail.com" },
@@ -152,15 +152,15 @@ const Contact = () => {
                                 <motion.div
                                     key={index}
                                     variants={contactItemVariants}
-                                    className={`flex items-center gap-3 contact-item ${theme === "light" ? "text-white" : "text-[#10101A]"}`}
+                                    className={`flex gap-3 contact-item  md:justify-start ${theme === "light" ? "text-white" : "text-[#10101A]"}`}
                                 >
                                     {item.icon}
                                     <span className="transition-all duration-300">{item.text}</span>
                                 </motion.div>
                             ))}
                             <hr className="border-[#2196F3] my-4" />
-                            <h3 className="text-xl font-semibold text-[#2196F3]">Contact with</h3>
-                            <div className="mxh-icons flex justify-center md:justify-start gap-6 mt-4">
+                            <h3 className="text-xl font-semibold text-[#2196F3] text-center md:text-left">Contact with</h3>
+                            <div className="mxh-icons flex justify-center gap-6 mt-4">
                                 {[
                                     { href: "https://www.facebook.com/thuanlv0911", icon: <FaFacebookF size={40} className={`p-2 rounded-full bg-[#1877F2] ${theme === "light" ? "text-white border-white" : "text-white border-[#10101A]"} border-1 hover:scale-110 hover:border-[#1877F2] transition-all duration-200 shadow-lg`} />, title: "Facebook" },
                                     { href: "https://www.instagram.com/thuanlv0911", icon: <FaInstagram size={40} className={`p-2 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 ${theme === "light" ? "text-white border-white" : "text-white border-[#10101A]"} border-1 hover:scale-110 hover:border-pink-500 transition-all duration-200 shadow-lg`} />, title: "Instagram" },
@@ -182,9 +182,9 @@ const Contact = () => {
                     </motion.div>
                     <motion.div
                         variants={formVariants}
-                        className={`contact-form p-6 rounded-lg md:w-2/3 ${theme === "light" ? "bg-[#0B0B13]" : "bg-[#eee]"}`}
+                        className={`contact-form p-6 rounded-lg w-full md:w-3/5 ${theme === "light" ? "bg-[#0B0B13]" : "bg-[#eee]"}`}
                     >
-                        <h2 className="text-3xl font-semibold text-[#2196F3] mb-4">Get in Contact</h2>
+                        <h2 className="text-3xl font-semibold text-[#2196F3] mb-4 text-center md:text-left">Get in Contact</h2>
                         <form>
                             <motion.div variants={inputVariants} className="mb-4">
                                 <input
@@ -193,7 +193,7 @@ const Contact = () => {
                                     className={`w-full p-3 rounded-lg border border-[#2196F3] focus:outline-none focus:ring-2 focus:ring-[#2196F3] ${theme === "light" ? "bg-[#1A1A22] text-white" : "bg-[#fff] text-[#10101A]"}`}
                                 />
                             </motion.div>
-                            <motion.div variants={containerVariants} className="flex gap-4 mb-4">
+                            <motion.div variants={containerVariants} className="flex gap-4 mb-4 flex-col sm:flex-row">
                                 <motion.input
                                     variants={inputVariants}
                                     type="text"
@@ -227,9 +227,9 @@ const Contact = () => {
                     variants={handshakeVariants}
                     initial="hidden"
                     animate={isHandshakeInView ? "visible" : "exit"}
-                    className={`p-6 rounded-lg mt-10 ${theme === "light" ? "bg-[#0B0B13]" : "bg-[#eee]"}`}
+                    className={`p-6 rounded-lg mt-10 mx-auto ${theme === "light" ? "bg-[#0B0B13]" : "bg-[#eee]"}`}
                 >
-                    <div className="flex flex-col justify-center align-items-center">
+                    <div className="flex flex-col justify-center items-center">
                         <h3 className="text-xl font-semibold text-[#2196F3]">Let’s Work Together</h3>
                         <motion.div
                             variants={handshakeIconVariants}
