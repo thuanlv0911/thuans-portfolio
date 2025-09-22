@@ -158,3 +158,35 @@
 :where(.dark) .mxh-icons svg {
     border-color: #fff;
 }
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 64em) {
+    .contact {
+        align-items: center;
+    }
+    .contact-container {
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .contact-title {
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .contact-info, .contact-form {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* Mobile */
+@media (max-width: 46.24em) {
+    .contact {
+        align-items: flex-start;
+    }
+    .contact-container {
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+}

@@ -206,7 +206,7 @@ const About = () => {
                             variants={containerVariants}
                             initial="hidden"
                             animate={isButtonsInView ? "visible" : "exit"}
-                            className="about-buttons flex gap-4 pl-16"
+                            className="about-buttons flex gap-4"
                         >
 
                             <Link to="contact" spy={true} smooth={true} offset={-100} duration={100}>

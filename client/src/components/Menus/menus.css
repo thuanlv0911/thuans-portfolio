@@ -5,7 +5,7 @@
     display: flex;
     vertical-align: middle;
     margin: 0 auto;
-    margin-top: 16px;
+    margin-top: 64px;
     object-fit: cover;
     transition: border-color 0.3s ease; 
 }
@@ -56,7 +56,7 @@
     display: flex;
     vertical-align: middle;
     margin: 0 auto;
-    margin-top: 16px;
+    margin-top: 64px;
     transition: border-color 0.3s ease; 
 }
 
@@ -165,4 +165,24 @@
 
 :where(.dark) .mt-auto.text-white {
     color: #10101A; 
+}
+
+.icon-menu {
+    display: none;
+}
+
+@media (min-width: 46.25em) and (max-width: 64em) { 
+    .full-menu {
+        display: none;
+    }
+
+    .icon-menu {
+        display: flex;
+    }
+}
+
+@media (max-width: 46.24em) { 
+    .full-menu, .icon-menu {
+        display: none;
+    }
 }

@@ -85,7 +85,46 @@
     color: #fff; 
 }
 
-
 :where(.light) .mxh-icons .bg-black svg {
     color: #fff; 
+}
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 64em) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .home-content {
+        order: 2;
+        text-align: center;
+    }
+    .profile-pic {
+        order: 1;
+        width: 20em;
+        height: 20em;
+    }
+    .mxh-icons {
+        justify-content: center;
+    }
+}
+
+/* Mobile */
+@media (max-width: 46.24em) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .home-content {
+        order: 2;
+        text-align: center;
+    }
+    .profile-pic {
+        order: 1;
+        width: 16em;
+        height: 16em;
+    }
+    .mxh-icons {
+        justify-content: center;
+    }
 }

@@ -99,7 +99,7 @@ const Projects = () => {
                     variants={titleVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
-                    className={`text-4xl font-mono projects-title ${theme === "light" ? "text-white" : "text-[#10101A]"}`}
+                    className={`text-4xl font-mono projects-title md:text-left ${theme === "light" ? "text-white" : "text-[#10101A]"}`}
                 >
                     Projects
                 </motion.h1>
@@ -108,7 +108,7 @@ const Projects = () => {
                     variants={cardContainerVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
-                    className="card-container grid grid-cols-1 md:grid-cols-3 gap-6 mt-8"
+                    className="card-container grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 max-w-4xl mx-auto"
                 >
                     <motion.div
                         variants={cardVariants}
@@ -133,7 +133,7 @@ const Projects = () => {
                             variants={titleCardVariants}
                             initial="hidden"
                             animate={isInView ? "visible" : "hidden"}
-                            className="text-2xl font-semibold text-[#2196F3]"
+                            className="text-2xl font-semibold text-[#2196F3] text-center md:text-left"
                         >
                             Club Management System
                         </motion.h2>
@@ -141,11 +141,11 @@ const Projects = () => {
                             variants={descriptionVariants}
                             initial="hidden"
                             animate={isInView ? "visible" : "hidden"}
-                            className={`${theme === "light" ? "text-gray-300" : "text-gray-700"} mt-2 flex-grow`}
+                            className={`mt-2 flex-grow text-center md:text-left ${theme === "light" ? "text-gray-300" : "text-gray-700"}`}
                         >
                             UniClub is a web-based club management system built using Java EE technologies. The application enables club administrators and members to manage events, departments, and internal communications effectively.
                         </motion.p>
-                        <div className="tech-stack mt-4">
+                        <div className="tech-stack mt-4 flex justify-center md:justify-start">
                             <motion.div
                                 variants={cardContainerVariants}
                                 initial="hidden"
@@ -207,7 +207,7 @@ const Projects = () => {
                             variants={titleCardVariants}
                             initial="hidden"
                             animate={isInView ? "visible" : "hidden"}
-                            className="text-2xl font-semibold text-[#2196F3]"
+                            className="text-2xl font-semibold text-[#2196F3] text-center md:text-left"
                         >
                             Personal Portfolio
                         </motion.h2>
@@ -215,11 +215,11 @@ const Projects = () => {
                             variants={descriptionVariants}
                             initial="hidden"
                             animate={isInView ? "visible" : "hidden"}
-                            className={`${theme === "light" ? "text-gray-300" : "text-gray-700"} mt-2 flex-grow`}
+                            className={`mt-2 flex-grow text-center md:text-left ${theme === "light" ? "text-gray-300" : "text-gray-700"}`}
                         >
                             Portfolio website showcasing my skills, projects, and achievements. Built with modern web technologies to provide a smooth and visually appealing user experience.
                         </motion.p>
-                        <div className="tech-stack mt-4">
+                        <div className="tech-stack mt-4 flex justify-center md:justify-start">
                             <motion.div
                                 variants={cardContainerVariants}
                                 initial="hidden"
@@ -236,7 +236,7 @@ const Projects = () => {
                                     <motion.div
                                         key={index}
                                         variants={techPillVariants}
-                                        className={`tech-pill ${theme === "light" ? "bg-white text-[#2196F3]" : "bg-[#10101A] "}`}
+                                        className={`tech-pill ${theme === "light" ? "bg-white text-[#2196F3]" : "bg-[#10101A]"}`}
                                     >
                                         <span className="tech-text">{tech.text}</span>
                                         {tech.icon}
@@ -281,7 +281,7 @@ const Projects = () => {
                             variants={titleCardVariants}
                             initial="hidden"
                             animate={isInView ? "visible" : "hidden"}
-                            className="text-2xl font-semibold text-[#2196F3]"
+                            className="text-2xl font-semibold text-[#2196F3] text-center md:text-left"
                         >
                             1912 Mobile
                         </motion.h2>
@@ -289,11 +289,11 @@ const Projects = () => {
                             variants={descriptionVariants}
                             initial="hidden"
                             animate={isInView ? "visible" : "hidden"}
-                            className={`${theme === "light" ? "text-gray-300" : "text-gray-700"} mt-2 flex-grow`}
+                            className={`mt-2 flex-grow text-center md:text-left ${theme === "light" ? "text-gray-300" : "text-gray-700"}`}
                         >
                             1912Mobile is a basic web application developed using JSP (JavaServer Pages), Java Servlet, JSTL (JavaServer Pages Standard Tag Library), and SQL Server as the database.
                         </motion.p>
-                        <div className="tech-stack mt-4">
+                        <div className="tech-stack mt-4 flex justify-center md:justify-start">
                             <motion.div
                                 variants={cardContainerVariants}
                                 initial="hidden"
