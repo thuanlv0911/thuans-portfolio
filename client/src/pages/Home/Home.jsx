@@ -150,7 +150,7 @@ const Home = () => {
                         <motion.h1 variants={itemVariants} className="text-5xl font-bold text-blue-500">
                             Le Van Thuan
                         </motion.h1>
-                        <h2 className="flex justify-center md:justify-start items-center gap-2 text-2xl">
+                        <h2 className="flex text-center justify-center md:justify-start items-center gap-2 text-2xl">
                             I am a
                             <motion.span variants={typewriterVariants}>
                                 <Typewriter

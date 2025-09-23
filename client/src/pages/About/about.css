@@ -156,11 +156,12 @@
 
 
 /* Tablet */
-@media (min-width: 46.25em) and (max-width: 64em) {
-  .about-container {
-    grid-template-columns: 1fr;
-        margin: 0 auto;
+@media (min-width: 49.2em) and (max-width: 64em) {
+
+}
+
+@media (min-width: 46.25em) and  (max-width: 49.2em) {
+  .about {
+    flex-direction: column;
   }
-
-
 }
