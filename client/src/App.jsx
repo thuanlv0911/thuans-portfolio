@@ -1,11 +1,13 @@
 import './App.css';
 import Layout from './components/Layout/Layout';
 import ScrollToTop from "react-scroll-to-top";
+import Nav from './components/MobileNav/Nav';
 
 
 function App() {
   return (
     <>
+      <Nav />
       <Layout />
       <ScrollToTop
         smooth
