@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+// eslint-disable-next-line no-unused-vars
+import { motion } from 'framer-motion';
 import { RiMenuFill, RiMenuFold2Fill } from "react-icons/ri";
 import "./nav.css";
 import { IoHomeOutline } from "react-icons/io5";
@@ -6,9 +8,42 @@ import { GrContactInfo } from "react-icons/gr";
 import { HiOutlineMail } from "react-icons/hi";
 import { TbCertificate } from "react-icons/tb";
 import { BsDiagram3 } from "react-icons/bs";
-import { FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
-import { FaRegCopyright } from "react-icons/fa6";
 import { Link } from 'react-scroll';
+
+const iconVariants = {
+    hidden: { opacity: 0, scale: 0.7 },
+    visible: {
+        opacity: 1,
+        scale: 1,
+        transition: { type: "spring", stiffness: 100, damping: 12, duration: 0.6 }
+    }
+};
+
+const titleVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: { type: "spring", stiffness: 120, damping: 10, duration: 0.6 }
+    }
+};
+
+const menuContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: { staggerChildren: 0.1 }
+    }
+};
+
+const menuItemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: { type: "spring", stiffness: 100, damping: 12, duration: 0.6 }
+    }
+};
 
 const Nav = () => {
     const [open, setOpen] = useState(false);
@@ -19,21 +54,37 @@ const Nav = () => {
 
     return (
         <div>
-            <div className="mobile-nav">
-                <div className="mobile-nav-header">
-                    {open ? (
-                        <RiMenuFold2Fill size={30} className="mobile-nav-icon" onClick={handleOpen} />
-                    ) : (
-                        <RiMenuFill size={30} className="mobile-nav-icon" onClick={handleOpen} />
-                    )}
+            <motion.div className="mobile-nav">
+                <motion.div className="mobile-nav-header">
+                    <motion.div
+                        variants={iconVariants}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        {open ? (
+                            <RiMenuFold2Fill size={30} className="mobile-nav-icon" onClick={handleOpen} />
+                        ) : (
+                            <RiMenuFill size={30} className="mobile-nav-icon" onClick={handleOpen} />
+                        )}
+                    </motion.div>
                     {!open && (
-                        <span className="mobile-nav-title">
+                        <motion.span
+                            className="mobile-nav-title"
+                            variants={titleVariants}
+                            initial="hidden"
+                            animate="visible"
+                        >
                             Thuan's Portfolio
-                        </span>
+                        </motion.span>
                     )}
                     {open && (
-                        <div className="mobile-icon-menu flex flex-row justify-around items-center">
-                            <div className="mobile-navbar-item-icons">
+                        <motion.div
+                            className="mobile-icon-menu flex flex-row justify-around items-center"
+                            variants={menuContainerVariants}
+                            initial="hidden"
+                            animate="visible"
+                        >
+                            <motion.div className="mobile-navbar-item-icons" variants={menuItemVariants}>
                                 <Link
                                     to="home"
                                     className="mobile-navbar-link-icons"
@@ -45,8 +96,8 @@ const Nav = () => {
                                 >
                                     <IoHomeOutline title="Home" />
                                 </Link>
-                            </div>
-                            <div className="mobile-navbar-item-icons">
+                            </motion.div>
+                            <motion.div className="mobile-navbar-item-icons" variants={menuItemVariants}>
                                 <Link
                                     to="about"
                                     className="mobile-navbar-link-icons"
@@ -58,8 +109,8 @@ const Nav = () => {
                                 >
                                     <GrContactInfo title="About Me" />
                                 </Link>
-                            </div>
-                            <div className="mobile-navbar-item-icons">
+                            </motion.div>
+                            <motion.div className="mobile-navbar-item-icons" variants={menuItemVariants}>
                                 <Link
                                     to="projects"
                                     className="mobile-navbar-link-icons"
@@ -71,8 +122,8 @@ const Nav = () => {
                                 >
                                     <BsDiagram3 title="Projects" />
                                 </Link>
-                            </div>
-                            <div className="mobile-navbar-item-icons">
+                            </motion.div>
+                            <motion.div className="mobile-navbar-item-icons" variants={menuItemVariants}>
                                 <Link
                                     to="certifications"
                                     className="mobile-navbar-link-icons"
@@ -84,8 +135,8 @@ const Nav = () => {
                                 >
                                     <TbCertificate title="Certifications" />
                                 </Link>
-                            </div>
-                            <div className="mobile-navbar-item-icons">
+                            </motion.div>
+                            <motion.div className="mobile-navbar-item-icons" variants={menuItemVariants}>
                                 <Link
                                     to="contact"
                                     className="mobile-navbar-link-icons"
@@ -97,13 +148,13 @@ const Nav = () => {
                                 >
                                     <HiOutlineMail title="Contact" />
                                 </Link>
-                            </div>
-                        </div>
+                            </motion.div>
+                        </motion.div>
                     )}
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </div>
     );
 };
 
-export default Nav;
+export default Nav;     
