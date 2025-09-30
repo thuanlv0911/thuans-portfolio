@@ -120,6 +120,28 @@ const Contact = () => {
     const isContainerInView = useInView(containerRef, { once: false, margin: "-50px" });
     const isHandshakeInView = useInView(handshakeRef, { once: false, margin: "-50px" });
 
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+
+        formData.append("access_key", "5f350c08-6959-4f16-b1bf-266613e1cba1");
+
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        const res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: json
+        }).then((res) => res.json());
+
+        if (res.success) {
+            console.log("Success", res);
+        }
+    };
     return (
         <div className={`min-h-screen flex items-center justify-center ${theme === "light" ? "bg-[#10101A]" : "bg-[#fff]"}`} id="contact">
             <div className="contact w-full px-4 py-8 mx-auto">
@@ -185,10 +207,12 @@ const Contact = () => {
                         className={`contact-form p-6 rounded-lg w-full md:w-3/5 ${theme === "light" ? "bg-[#0B0B13]" : "bg-[#eee]"}`}
                     >
                         <h2 className="text-3xl font-semibold text-[#2196F3] mb-4 text-center md:text-left">Get in Contact</h2>
-                        <form>
+                        <form onSubmit={onSubmit}>
                             <motion.div variants={inputVariants} className="mb-4">
                                 <input
+                                    required
                                     type="text"
+                                    name="subject"
                                     placeholder="Subject"
                                     className={`w-full p-3 rounded-lg border border-[#2196F3] focus:outline-none focus:ring-2 focus:ring-[#2196F3] ${theme === "light" ? "bg-[#1A1A22] text-white" : "bg-[#fff] text-[#10101A]"}`}
                                 />
@@ -196,24 +220,30 @@ const Contact = () => {
                             <motion.div variants={containerVariants} className="flex gap-4 mb-4 flex-col sm:flex-row">
                                 <motion.input
                                     variants={inputVariants}
+                                    required
                                     type="text"
+                                    name="name"
                                     placeholder="Name"
                                     className={`w-full p-3 rounded-lg border border-[#2196F3] focus:outline-none focus:ring-2 focus:ring-[#2196F3] ${theme === "light" ? "bg-[#1A1A22] text-white" : "bg-[#fff] text-[#10101A]"}`}
                                 />
                                 <motion.input
                                     variants={inputVariants}
+                                    required
                                     type="email"
+                                    name="email"
                                     placeholder="Email"
                                     className={`w-full p-3 rounded-lg border border-[#2196F3] focus:outline-none focus:ring-2 focus:ring-[#2196F3] ${theme === "light" ? "bg-[#1A1A22] text-white" : "bg-[#fff] text-[#10101A]"}`}
                                 />
                             </motion.div>
                             <motion.div variants={inputVariants} className="mb-4">
                                 <textarea
+                                    name="message"
+                                    required
                                     placeholder="Message"
                                     className={`w-full p-3 rounded-lg border border-[#2196F3] focus:outline-none focus:ring-2 focus:ring-[#2196F3] h-32 resize-none ${theme === "light" ? "bg-[#1A1A22] text-white" : "bg-[#fff] text-[#10101A]"}`}
                                 ></textarea>
                             </motion.div>
-                            <Button className={`btn-about btn-send-message ${theme === "light" ? "text-[#10101A]" : "text-white"}`}>
+                            <Button className={`btn-about btn-send-message ${theme === "light" ? "text-[#10101A]" : "text-white"}`} type="submit">
                                 <span className="btn-content">
                                     <IoMailUnreadOutline className="btn-icon" />
                                     Send Message
@@ -239,8 +269,8 @@ const Contact = () => {
                         </motion.div>
                     </div>
                 </motion.div>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 };
 
