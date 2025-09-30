@@ -8,6 +8,8 @@ import { Button } from "react-bootstrap";
 import { FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
 // eslint-disable-next-line no-unused-vars
 import { motion, useInView } from "framer-motion";
+import Swal from 'sweetalert2'
+
 import { useTheme } from "../../context/ThemeContext";
 
 const titleVariants = {
@@ -123,25 +125,29 @@ const Contact = () => {
     const onSubmit = async (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
-
         formData.append("access_key", "5f350c08-6959-4f16-b1bf-266613e1cba1");
-
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
 
         const res = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            },
-            body: json
+            body: formData
         }).then((res) => res.json());
 
         if (res.success) {
-            console.log("Success", res);
+            Swal.fire({
+                title: "Success",
+                text: "Message sent!",
+                icon: "success"
+            });
+        } else {
+            console.error("Error:", res);
+            Swal.fire({
+                title: "Error",
+                text: res.message || "Something went wrong",
+                icon: "error"
+            });
         }
     };
+
     return (
         <div className={`min-h-screen flex items-center justify-center ${theme === "light" ? "bg-[#10101A]" : "bg-[#fff]"}`} id="contact">
             <div className="contact w-full px-4 py-8 mx-auto">
