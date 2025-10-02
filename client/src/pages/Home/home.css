@@ -89,7 +89,6 @@
     color: #fff; 
 }
 
-/* Tablet */
 @media (min-width: 46.25em) and (max-width: 64em) {
     .container {
        
@@ -110,7 +109,6 @@
     }
 }
 
-/* Mobile */
 @media (max-width: 46.24em) {
     .container {
         margin-top: 36px;

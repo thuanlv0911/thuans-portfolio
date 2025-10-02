@@ -3,7 +3,6 @@ import './home.css';
 import Typewriter from 'typewriter-effect';
 import { FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
 import { BsMoonStars, BsSun } from "react-icons/bs";
-
 import profilePic from '../../assets/images/hxx.jpg';
 import { Button } from 'react-bootstrap';
 // eslint-disable-next-line no-unused-vars
